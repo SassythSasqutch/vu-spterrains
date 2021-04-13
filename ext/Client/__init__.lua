@@ -1,0 +1,2 @@
+require 'CapturePointNameConfig'
+require 'JoinNotification'

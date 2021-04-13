@@ -1,0 +1,13 @@
+{
+	"Name": "Thunder Run",
+	"Description": "Thunder Run in Conquest Large, US vs RU.",
+	"Version": "0.1",
+	"Authors": "SassythSasqutch",
+	"HasVeniceEXT": true,
+	"HasWebUI": false,
+	"Dependencies": {
+	},
+	"Tags": [
+        "spterrain"
+	]
+}
