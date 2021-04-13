@@ -3,7 +3,7 @@ Modification for Battlefield 3 (using the Venice Unleashed framework) allowing s
 
 For loading different levels, you have to change the first line in `vu-spterrains/ext/Shared/__init__.lua` to load the map you want to load. In your server MapList, load the level like any other. The options are below:
 
-`coop_002         -    Hit and Run
+```coop_002         -    Hit and Run
 
 coop_003         -    Drop 'Em Like Liquid
 
@@ -39,6 +39,6 @@ sp_tank_b        -    Fear No Evil
 
 sp_valley        -    Rock and a Hard Place
 
-sp_villa         -    Kaffarov`
+sp_villa         -    Kaffarov```
 
 By default, the spawns are set to high above the map, allowing you to parachute down and explore/find coordinates, etc. Conquest Large layouts have been made for Thunder Run (SP_Tank).
