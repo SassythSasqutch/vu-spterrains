@@ -7,7 +7,6 @@
 -- I may have missed some out, or some may be unimportant or undesired for what you're doing, so feel free to remove them from this list.
 
 -- TODO: Look into global sound, sound schematics, etc.
--- TODO: Some levels have LightMap_01, LightMap_02 subworld - maybe we want these, maybe they conflict etc (lightmaps seem to make no diff for semper fi)
 
 approvedWorldPartRefGuids = {
     -- Hit and Run COOP_002 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
