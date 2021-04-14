@@ -621,5 +621,6 @@ approvedWorldPartRefGuids = {
     '9FF53760-262E-4474-8E0A-BA2E8D32B87A', -- Villa_Lighting
     'A0D08ABC-2524-4783-9B0E-106E1BE3DF77', -- Villa_SOUND_Schematic
     'B12A0A29-8117-433F-AD97-98668834FD85', -- Villa_PC_Art
+    'D879E38A-622C-4CA8-9440-0A96F3A1A96E', -- Villa_Background
 
 }
