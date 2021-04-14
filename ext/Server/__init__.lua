@@ -14,3 +14,4 @@ end)
 
 require 'JoinedPlayerFadeIn'
 require 'DebugSpSoldierSpawn'
+require 'ForceSkipRoundCommand_Server'

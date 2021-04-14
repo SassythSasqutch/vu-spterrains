@@ -1,7 +1,7 @@
 Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
 
-    -- Don't read any partition not referring to the SP map being loaded
-    if partition == nil or string.find(partition.name, thisMap) == nil then
+    -- Don't read any partition not referring to a SP or COOP map
+    if partition == nil or (string.find(partition.name, 'coop_') == nil and string.find(partition.name, 'sp_') == nil) then
         return
     end
 
