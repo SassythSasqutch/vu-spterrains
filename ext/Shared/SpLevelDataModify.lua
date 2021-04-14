@@ -1,3 +1,5 @@
+require '__shared/SpLevelExcludedSubWorldList'
+
 Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
 
     -- Don't read any partition not referring to a SP or COOP map
@@ -39,11 +41,21 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
         if instance.typeInfo.name == 'SubWorldReferenceObjectData' then
             
             local thisInstance = SubWorldReferenceObjectData(instance)
+
+            for i, v in pairs(spLevelExcludedSubWorldList) do
+                if thisInstance.instanceGuid == Guid(spLevelExcludedSubWorldList[i]) then
+                    print('Found SubWorld to exclude, not configuring autoload for \'' .. thisInstance.bundleName .. '\'...')
+                    goto cont
+                end
+            end
+
             thisInstance:MakeWritable()
 
             -- Allow all the parts of the level (SubWorlds) to be loaded simultaneously
             print('Configuring autoload for \'' .. thisInstance.bundleName .. '\'...')
             thisInstance.autoLoad = true
+
+            ::cont::
 
         end
 
@@ -82,3 +94,5 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
     end
 
 end)
+
+-- Put any InstanceLoadHandlers to exclude SubWorlds down here.
