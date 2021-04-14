@@ -1,3 +1,6 @@
+-- By default, all WorldPart instances are excluded: with singleplayer and coop maps, they are often bad news for logic etc.
+-- This acts as a 'whitelist' for WorldPart instances. As such, the WorldPartReferenceObjectData GUIDs in this list are allowed to load, and all others aren't.
+
 -- The method for compiling this list was simple - use Powback's EBX viewer to look through the 'Objects' list of the LevelData in question 
 -- and see which WorldPartReferenceObjectData instances sounded important to the MP experience (e.g. props, buildings, etc.). 
 -- Often, there were more WorldPartReferenceObjectData contained in SubWorlds (for coop, called something like AB01_Art_Parent; for SP, something like Bank_SUB, but usually named after the SubWorld).
