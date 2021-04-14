@@ -13,3 +13,4 @@ Events:Subscribe('Level:LoadResources', function()
 end)
 
 require 'JoinedPlayerFadeIn'
+require 'DebugSpSoldierSpawn'

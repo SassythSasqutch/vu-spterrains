@@ -41,6 +41,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             local thisInstance = SubWorldReferenceObjectData(instance)
             thisInstance:MakeWritable()
 
+            -- Allow all the parts of the level (SubWorlds) to be loaded simultaneously
             print('Configuring autoload for \'' .. thisInstance.bundleName .. '\'...')
             thisInstance.autoLoad = true
 

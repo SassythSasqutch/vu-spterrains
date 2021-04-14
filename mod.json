@@ -1,7 +1,7 @@
 {
-	"Name": "SP and Co-op Terrains",
+	"Name": "SP and Co-Op Terrains",
 	"Description": "Allows singleplayer and coop terrains to be played in multiplayer.",
-	"Version": "0.1",
+	"Version": "0.5",
 	"Authors": "SassythSasqutch",
 	"HasVeniceEXT": true,
 	"HasWebUI": false,

@@ -1,4 +1,4 @@
-thisMap = 'sp_paris' --[[ CHANGE to one of:
+thisMap = 'sp_villa' --[[ CHANGE to one of:
 coop_002         -    Hit and Run
 coop_003         -    Drop 'Em Like Liquid
 coop_006         -    Fire from the Sky
@@ -22,5 +22,3 @@ sp_villa         -    Kaffarov
 
 require '__shared/SpLevelDataModify'
 require '__shared/SpLevelDataRemove'
---require '__shared/MpLoadData'
---require '__shared/MpInjectLogic'

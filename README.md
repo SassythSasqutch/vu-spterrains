@@ -14,7 +14,6 @@ sp_bank          -    Operation Guillotine
 sp_earthquake    -    Operation Swordbreaker
 sp_earthquake2   -    Uprising
 sp_finale        -    The Great Destroyer
-sp_interrogation -    Intro
 sp_jet           -    Going Hunting
 sp_new_york      -    Semper Fidelis
 sp_paris         -    Comrades
@@ -26,3 +25,5 @@ sp_villa         -    Kaffarov
 ```
 
 By default, the spawns are set to high above the map, allowing you to parachute down and explore/find coordinates, etc. Conquest Large layouts have been made for Thunder Run (SP_Tank).
+
+Many SP levels have issues with certain parts of the map, causing the server to crash. For this reason, these have been excluded. The list of approved WorldParts - including ones which should be approved, but are excluded for their problems - can be seen and edited at `vu-spterrains/ext/Shared/SpLevelApprovedWorldPartList.lua`. Operation Swordbreaker (SP_Earthquake) is a level which is particularly hurt by this. It seems like it could be a small no. of props/assets creating this issue, so at some point I will try and fix it.
