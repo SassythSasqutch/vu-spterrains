@@ -1,12 +1,12 @@
 NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 
 	-- Retrieve MPSoldier
-	local spSoldierBp = ResourceManager:SearchForDataContainer('Characters/Soldiers/SpSoldier')
-	if spSoldierBp == nil then
-		print('Could not find SPSoldier...')
+	local coopSoldierBp = ResourceManager:SearchForDataContainer('Characters/Soldiers/CoopSoldier')
+	if coopSoldierBp == nil then
+		print('Could not find COOPSoldier...')
 		return
 	else
-		print('Found SPSoldier!')
+		print('Found COOPSoldier!')
 	end
 
 	-- Set spawn position
@@ -30,7 +30,7 @@ NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 	if connectedPlayer.soldier == nil then
 		print('Spawning player \'' .. connectedPlayer.name .. '\'...')
 
-		local newSoldierEntity = connectedPlayer:CreateSoldier(spSoldierBp, playerSpawnPos)
+		local newSoldierEntity = connectedPlayer:CreateSoldier(coopSoldierBp, playerSpawnPos)
 		if newSoldierEntity == nil then
 			print('Could not generate soldier!')
 			return
