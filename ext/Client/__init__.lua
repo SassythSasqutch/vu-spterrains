@@ -1,4 +1,4 @@
-require 'CapturePointNameConfig'
+require 'MpPresets/Default/CapturePointNames'
 require 'JoinNotification'
-require 'DebugSpSoldierSpawnClientSide'
-require 'ForceSkipRoundCommand_Client'
+require 'DevTools/DebugSpSoldierSpawnClientSide'
+require 'DevTools/ForceSkipRoundCommand_Client'

@@ -13,5 +13,5 @@ Events:Subscribe('Level:LoadResources', function()
 end)
 
 require 'JoinedPlayerFadeIn'
-require 'DebugSpSoldierSpawn'
-require 'ForceSkipRoundCommand_Server'
+require 'DevTools/DebugSpSoldierSpawn'
+require 'DevTools/ForceSkipRoundCommand_Server'

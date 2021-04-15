@@ -36,6 +36,20 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             local cqlCategory = LevelDescriptionInclusionCategory()
             cqlCategory.category = 'GameMode'
             cqlCategory.mode:add('ConquestLarge0')
+            cqlCategory.mode:add('ConquestSmall0')
+            cqlCategory.mode:add('ConquestAssaultLarge0')
+            cqlCategory.mode:add('ConquestAssaultSmall0')
+            cqlCategory.mode:add('RushLarge0')
+            cqlCategory.mode:add('SquadRush0')
+            cqlCategory.mode:add('SquadDeathMatch0')
+            cqlCategory.mode:add('TeamDeathMatch0')
+            cqlCategory.mode:add('TeamDeathMatchC0')
+            cqlCategory.mode:add('Domination0')
+            cqlCategory.mode:add('GunMaster0')
+            cqlCategory.mode:add('TankSuperiority0')
+            cqlCategory.mode:add('Scavenger0')
+            cqlCategory.mode:add('CaptureTheFlag0')
+            cqlCategory.mode:add('AirSuperiority0')
             thisInstance.categories:add(cqlCategory)
 
             -- Remove SP 'StartPoints'
