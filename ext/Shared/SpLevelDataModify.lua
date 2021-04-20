@@ -33,6 +33,9 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
             -- Enable map for CQL
             print('Setting LevelDescriptionInclusionCategory in \'' .. partition.name .. '\'...')
+            -- Temp
+            local catToClear
+            -- Temp
             local cqlCategory = LevelDescriptionInclusionCategory()
             cqlCategory.category = 'GameMode'
             cqlCategory.mode:add('ConquestLarge0')
@@ -112,6 +115,17 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
         end
 
     end
+
+end)
+
+
+-- For testing with Ziba Tower
+ResourceManager:RegisterInstanceLoadHandler(Guid('3008B866-A95F-12E7-3E2A-C53B33F10695'), Guid('3008B866-A95F-12E7-3E2A-C53B33F10695'), function(instance)
+
+    local thisInstance = LevelDescriptionAsset(instance)
+    thisInstance:MakeWritable()
+
+    LevelDescriptionInclusionCategory(thisInstance.categories[1]).mode:add('ConquestLarge0')
 
 end)
 

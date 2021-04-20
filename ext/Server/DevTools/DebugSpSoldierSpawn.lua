@@ -1,12 +1,14 @@
 NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 
+	connectedPlayer.teamId = TeamId.Team2
+
 	-- Retrieve MPSoldier
-	local coopSoldierBp = ResourceManager:SearchForDataContainer('Characters/Soldiers/CoopSoldier')
+	local coopSoldierBp = ResourceManager:SearchForDataContainer('Characters/Soldiers/MpSoldier')
 	if coopSoldierBp == nil then
-		print('Could not find COOPSoldier...')
+		print('Could not find MpSoldier...')
 		return
 	else
-		print('Found COOPSoldier!')
+		print('Found MpSoldier!')
 	end
 
 	-- Set spawn position
@@ -42,8 +44,6 @@ NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 			print('Could not spawn soldier!')
 		end
 	end
-
-	connectedPlayer.teamId = TeamId.Team2
 
 	-- Set loadout
 	weaponCustomisation = CustomizeSoldierData()
