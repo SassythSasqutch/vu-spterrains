@@ -15,25 +15,47 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
             local thisInstance = WorldPartReferenceObjectData(instance)
 
-            print('Intercepting WorldPart: ' .. thisInstance.blueprint.name)
+            --print('Intercepting WorldPart: ' .. thisInstance.blueprint.name)
 
             -- If this is not an approved WorldPart from the list, do not continue
             for i, v in pairs(approvedWorldPartRefGuids) do
                 if thisInstance.instanceGuid == Guid(approvedWorldPartRefGuids[i]) then
-                    print('WorldPart approved.')
+                    --print('WorldPart approved.')
                     goto cont
                 end
             end
             
             thisInstance:MakeWritable()
 
-            print('Excluding WorldPartReferenceObjectData \'' .. tostring(thisInstance.blueprint.name) .. '\' in partition \'' .. partition.name .. '\'...')
+            --print('Excluding WorldPartReferenceObjectData \'' .. tostring(thisInstance.blueprint.name) .. '\' in partition \'' .. partition.name .. '\'...')
             thisInstance.excluded = true
 
             ::cont::
             
         end
     
+    end
+
+end)
+
+-- Clear connections
+Events:Subscribe('Partition:Loaded', function(partition)
+
+    -- Don't read any partition not referring to a SP or COOP map
+    if partition == nil or (string.find(partition.name, 'coop_') == nil and string.find(partition.name, 'sp_') == nil) then
+        return
+    end
+
+    for _, instance in pairs(partition.instances) do
+
+        if instance.typeInfo.name == 'LevelData' then
+
+            local thisInstance = LevelData(instance)
+            thisInstance:MakeWritable()
+            thisInstance.linkConnections:clear()
+
+        end
+
     end
 
 end)

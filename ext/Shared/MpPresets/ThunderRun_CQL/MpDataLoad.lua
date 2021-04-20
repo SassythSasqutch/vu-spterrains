@@ -21,7 +21,6 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
     local gameModeName = SharedUtils:GetCurrentGameMode()
 
     if levelName == nil or gameModeName == nil then
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> RACE CONDITION ERROR, RESTART SERVER!!!')
         return
     end
 

@@ -13,7 +13,7 @@ NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 
 	-- Set spawn position
 	playerSpawnPos = LinearTransform()
-	playerSpawnPos.trans = Vec3(0,1000,0)
+	playerSpawnPos.trans = Vec3(0,10000,0)
 	if playerSpawnPos == nil then
 		print('Could not generate spawn pos?')
 		return
