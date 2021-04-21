@@ -67,7 +67,9 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
             for i, v in pairs(spLevelExcludedSubWorldList) do
                 if thisInstance.instanceGuid == Guid(spLevelExcludedSubWorldList[i]) then
-                    print('Found SubWorld to exclude, not configuring autoload for \'' .. thisInstance.bundleName .. '\'...')
+                    print('Found SubWorld to exclude, disabling autoload for \'' .. thisInstance.bundleName .. '\'...')
+                    thisInstance:MakeWritable()
+                    thisInstance.autoLoad = false
                     goto cont
                 end
             end
