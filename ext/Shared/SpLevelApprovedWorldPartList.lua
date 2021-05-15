@@ -169,6 +169,8 @@ approvedWorldPartRefGuids = {
 
     -- Operation Guillotine SP_Bank -------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -- Funny behaviour with MP implementation?
+    -- Just a fucking client crash on join - maybe same as above.
+    -- TODO: Fix this shit
     'C29859FA-A908-0935-5519-961A6B772E32', -- Default (terrain)
     '1330882D-6010-4F20-86DB-B047A2B8CDD3', -- Sound
     'CE3C68DE-5C6A-4EFD-B219-73BAF21BF6D5', -- Sound_Schematic
@@ -219,6 +221,7 @@ approvedWorldPartRefGuids = {
 
     -- Operation Swordbreaker SP_Earthquake -----------------------------------------------------------------------------------------------------------------------------------------------------------
     -- (if you want this environment, either find the core problem or use Operation Exodus (COOP_007) or Uprising (SP_Earthquake2) instead - this is not a nice MP experience)
+    -- TODO: Fix this shit - Server crash on sending spawn messages.
     'E35A999C-740F-9CE4-823D-46710FFD4BB3', -- Default (terrain)
     '18C33603-C129-4A9D-A7BC-4150422D4DD9', -- Sound
     '2D17B52C-1B94-479C-9B52-DA9AB283AC2C', -- Sound_Areas
@@ -277,6 +280,7 @@ approvedWorldPartRefGuids = {
     '36AA5FB7-505C-42EB-9406-63CC87745331', -- StreetCrossingSound
 
     -- Uprising SP_Earthquake2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -- Server crash on sending spawn messages. Solomon?
     '7136D545-F7EE-4A60-0720-27FCB803F896', -- Default (terrain)
     '37D391E6-F1A1-4D0A-9389-4386CB5E7671', -- Global_Sound
     '5CB82E25-FD85-4CBB-87B1-69A13099F9C4', -- Global_Sound_SCM (sound schematic)
@@ -398,6 +402,7 @@ approvedWorldPartRefGuids = {
     '8B4E13CF-EF97-4634-84EE-06A11D97AB93', -- TrainRide_Sound
 
     -- Comrades SP_Paris ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -- Client CTD on server join
     '7D30AFD4-5020-B5F9-192B-B5440346145E', -- Default (terrain)
     '0E6AA9BF-F6B5-410B-8F6F-CE9B88D8EFC9', -- Art
     'E9E9185F-0A4D-4C5B-BBA7-793E09772831', -- SoundArea
