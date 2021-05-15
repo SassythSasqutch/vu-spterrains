@@ -139,7 +139,7 @@ Events:Subscribe('Level:LoadResources', function()
     if SharedUtils:GetLevelName() == 'Levels/SP_Tank/SP_Tank' then
 
         ServerUtils:SetCustomMapName('Thunder Run')
-        local banner = RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/eiDLOtJ.jpg'})
+        RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/eiDLOtJ.jpg'})
 
     end
 
