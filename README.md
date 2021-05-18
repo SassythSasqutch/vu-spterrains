@@ -39,11 +39,11 @@ To use a freecam to look around, load any gamemode other than `TeamDeathMatchC0`
 
 ## Gamemodes - Custom Layouts
 
-Some maps have custom layouts, making them playable for more than just exploration.
+*Not yet implemented* Some maps have custom layouts, making them playable for more than just exploration.
 
 | Level                      | Gamemode (as in MapList) | Description                                                                                                          |
 | -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Teheran. Probably biggest CQL map in BF.    |
+| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Teheran. Maybe biggest CQL map in BF.       |
 
 More custom layouts will be made in the future.
 

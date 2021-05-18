@@ -34,7 +34,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             -- Enable map for CQL
             print('Setting LevelDescriptionInclusionCategory in \'' .. partition.name .. '\'...')
             -- Temp
-            local catToClear
+            local catToClear -- What the fuck is this?
             -- Temp
             local cqlCategory = LevelDescriptionInclusionCategory()
             cqlCategory.category = 'GameMode'

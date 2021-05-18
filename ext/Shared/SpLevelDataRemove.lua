@@ -38,8 +38,8 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
 end)
 
--- Clear connections
-Events:Subscribe('Partition:Loaded', function(partition)
+-- Clear connections (at some point will be necessary to remove logic associated with sound)
+--[[Events:Subscribe('Partition:Loaded', function(partition)
 
     -- Don't read any partition not referring to a SP or COOP map
     if partition == nil or (string.find(partition.name, 'coop_') == nil and string.find(partition.name, 'sp_') == nil) then
@@ -58,4 +58,4 @@ Events:Subscribe('Partition:Loaded', function(partition)
 
     end
 
-end)
+end)]]
