@@ -25,7 +25,7 @@ sp_valley        -    Rock and a Hard Place
 sp_villa         -    Kaffarov
 ```
 
-**NOTE**: Some quirk of Frostbite or something means that this mod can't load Thunder Run (sp_tank) if Fear No Evil (sp_tank_b) is allowed to load in MP - the server loads Fear No Evil every time you put 'sp_tank' in the server MapList. A dirty fix has been implemented: *if you wish to play Fear No Evil, change line 8 in `vu-spterrains/ext/Shared/__init__.lua` to 'true'*.
+**NOTE**: Some quirk of Frostbite or something means that this mod can't load Thunder Run (sp_tank) if Fear No Evil (sp_tank_b) is allowed to load in MP - the server loads Fear No Evil every time you put 'sp_tank' in the server MapList. A dirty fix has been implemented: *if you wish to play Fear No Evil, change line 5 in `vu-spterrains/ext/Shared/__init__.lua` to 'true'*.
 
 ## Gamemodes - Default
 
@@ -39,13 +39,15 @@ To use a freecam to look around, load any gamemode other than `TeamDeathMatchC0`
 
 ## Gamemodes - Custom Layouts
 
-*Not yet implemented* Some maps have custom layouts, making them playable for more than just exploration.
+Some maps have custom layouts, making them playable for more than just exploration.
 
 | Level                      | Gamemode (as in MapList) | Description                                                                                                          |
 | -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Teheran. Maybe biggest CQL map in BF.       |
+| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Tehran. Maybe biggest CQL map in BF.        |
 
 More custom layouts will be made in the future.
+
+There are instructions for making your own custom layouts (aka 'presets') in `vu-spterrains/ext/Shared/MpPresets/Default`. If your preset works, message me and I will add it to the mod: the more, the merrier.
 
 ## Other issues
 

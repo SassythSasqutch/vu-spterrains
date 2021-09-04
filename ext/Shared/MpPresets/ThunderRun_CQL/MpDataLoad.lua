@@ -1,20 +1,12 @@
 -- Mount superbundles
-
 Events:Subscribe('Level:LoadResources', function()
 
-    ResourceManager:MountSuperBundle('chunks0')
-    ResourceManager:MountSuperBundle('chunks1')
-    ResourceManager:MountSuperBundle('chunks2')
-
-    print('Mounting MP superbundle...')
-    ResourceManager:MountSuperBundle('mpchunks')
     print('Mounting Operation Firestorm superbundle for MP logic...')
     ResourceManager:MountSuperBundle('levels/mp_012/mp_012')
 
 end)
 
 -- Inject bundles
-
 Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
 
     local levelName = SharedUtils:GetLevelName()
@@ -35,6 +27,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
         print('Injecting MP bundles...')
         bundles = {
+            'ui/flow/bundle/loadingbundlemp',
             'levels/mp_012/mp_012',
             'levels/mp_012/conquest_large',
             bundles[1],
@@ -42,6 +35,16 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
         hook:Pass(bundles, compartment)
 
+    end
+    
+    for i, bundle in pairs(bundles) do
+        if bundle == levelName..'_UiPlaying' then
+            bundles = {
+                'ui/flow/bundle/ingamebundlemp',
+                'levels/mp_012/mp_012_uiplaying'
+            }
+            hook:Pass(bundles,compartment)
+        end
     end
 
 end)

@@ -20,7 +20,11 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             -- If this is an approved WorldPart from the list, skip past the code to exclude the WorldPart
             for i, v in pairs(approvedWorldPartRefGuids) do
                 if thisInstance.instanceGuid == Guid(approvedWorldPartRefGuids[i]) then
-                    print('WorldPart \'' .. tostring(thisInstance.blueprint.name) .. '\' approved.')
+                    if thisInstance.blueprint.name == '' then
+                        print('WorldPart (unknown) approved.')
+                    else
+                        print('WorldPart \'' .. thisInstance.blueprint.name .. '\' approved.')
+                    end
                     goto cont
                 end
             end

@@ -21,7 +21,6 @@ Events:Subscribe('Extension:Loaded', function()
 
     for _, spUILevelDescriptionComponentGuid in pairs(spUILevelDescriptionComponentGuids) do
 
-        print('Fucking with loading screen...')
         local thisUILevelDescriptionComponent_Uncasted = ResourceManager:SearchForInstanceByGuid(Guid(spUILevelDescriptionComponentGuid))
 
         if thisUILevelDescriptionComponent_Uncasted ~= nil then

@@ -1,14 +1,15 @@
-require '__shared/SpLevelDataModify'
-require '__shared/SpLevelDataRemove'
---require '__shared/SpLevelVisualEnvironmentSet'
-
 -- If Fear No Evil (SP_Tank_B) is allowed to load, Thunder Run (SP_Tank) can't load (strange quirk with Frostbite or something). 
--- Maybe I can find a proper fix later, but for now Fear No Evil is disabled by default, because it's a bad map and Thunder Run is fucken sick.
+-- Maybe I can find a proper fix later, but for now Fear No Evil is disabled by default, because it's a mediocre map and Thunder Run is fucken sick.
 -- To re-enable it (and thus disable SP_Tank), change the below to 'true'
 
 allowFearNoEvil = false
 
+require '__shared/SpLevelDataModify'
+require '__shared/SpLevelDataRemove'
+--require '__shared/SpLevelVisualEnvironmentSet'
+
 -- Multiplayer presets
+require '__shared/MpPresets/MpCommonDataLoad'
 require '__shared/MpPresets/AddVoiceOverLogic'
 
 require '__shared/MpPresets/Default/MpDataLoad'
@@ -16,46 +17,10 @@ require '__shared/MpPresets/Default/CreateGameModeSubWorldRef'
 
 require '__shared/MpPresets/ThunderRun_CQL/MpDataLoad'
 require '__shared/MpPresets/ThunderRun_CQL/CreateGameModeSubWorldRef'
-
-require '__shared/MpPresets/DropEmLikeLiquid_Rush/MpDataLoad'
-require '__shared/MpPresets/DropEmLikeLiquid_Rush/CreateGameModeSubWorldRef'
-
-require '__shared/MpPresets/ZibaTower_CQL_Test/MpDataLoad'
-require '__shared/MpPresets/ZibaTower_CQL_Test/CreateGameModeSubWorldRef'
-
---[[ View interesting partitions being loaded
-Events:Subscribe('Partition:Loaded', function(partition)
-
-    if partition == nil then return end
-
-    if string.find(partition.name, 'weapon') 
-    or string.find(partition.name, 'prop') 
-    or string.find(partition.name, 'object')
-    or string.find(partition.name, 'architecture') 
-    or string.find(partition.name, 'sound')
-    or string.find(partition.name, 'fx') 
-    or string.find(partition.name, 'character') 
-    or string.find(partition.name, 'persistence') 
-    or string.find(partition.name, 'mp_subway')
-    or string.find(partition.name, 'textures') 
-    or string.find(partition.name, 'levels') 
-    or string.find(partition.name, 'decals') 
-    or string.find(partition.name, 'xp_raw') 
-    or string.find(partition.name, 'lodgroups') 
-    or string.find(partition.name, 'animations')
-    or string.find(partition.name, 'vehicle')
-    or string.find(partition.name, 'ui')
-    or string.find(partition.name, 'ai') then return end
-
-    print(partition.name)
-
-end)]]
-
--- View bundles being loaded
---[[Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
-
-    for i, v in pairs(bundles) do 
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> '..tostring(bundles[i]))
-    end
-
-end)]]
+-- I designed the below back in January, when I hoped people would play it. That's not going to happen, so this is basically redundant, other than a good exemplar. Maybe it still exists just so I can say 'akschually it's the biggest Conquest Large map ever hahahaha'. I'm not even sure if it is anymore tho, BF2042 and all.
+-- It was also designed for a different mod, so it returns many errors when it loads. You can ignore those. Vehicle spawns are broken etc., but there's no reason to fix them.
+require '__shared/MpPresets/ThunderRun_CQL/MapModifications/CapturePointA_InitialOwnerSet'
+require '__shared/MpPresets/ThunderRun_CQL/MapModifications/MainDeployments'
+require '__shared/MpPresets/ThunderRun_CQL/MapModifications/Objectives'
+require '__shared/MpPresets/ThunderRun_CQL/MapModifications/ObjectiveSpawns'
+require '__shared/MpPresets/ThunderRun_CQL/MapModifications/OOB'
