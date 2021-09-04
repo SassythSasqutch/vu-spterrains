@@ -8,27 +8,27 @@ Events:Subscribe('Partition:Loaded', function(partition)
         return
     end
 
-    -- Don't continue if the level is not Drop 'Em Like Liquid Rush
-    if string.find(levelName, 'COOP_003') == nil or gameModeName ~= 'RushLarge0' then
+    -- Don't continue if the level is not Ziba Tower Conquest Large
+    if string.find(levelName, 'XP2_Skybar') == nil or gameModeName ~= 'ConquestLarge0' then
         return
     end
 
-    print('Creating reference to Seine Crossing Rush SubWorld in \'' .. partition.name .. '\'...')
+    print('Creating reference to MP Conquest Large SubWorld in \'' .. partition.name .. '\'...')
 
-    local seineRushSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('28C6D036-DC2A-11DF-BF53-8B1F263C3963'), Guid('EB7DE42F-1337-4CB2-9CCA-90A6036E667B')))
-    spRushSubWorldReferenceObjectData = SubWorldReferenceObjectData(seineRushSubWorldReferenceObjectData:Clone(Guid('C0000000-0000-0000-0000-000000000000')))
+    local firestormCqlSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('8BB2506F-493A-11DF-B052-CC4B5D6E8131'), Guid('8FE1F5F4-6C8F-4185-B478-2DDEA1CCA686')))
+    spCqlSubWorldReferenceObjectData = SubWorldReferenceObjectData(firestormCqlSubWorldReferenceObjectData:Clone(Guid('A0000000-0000-0000-0000-000000000000')))
 
-    partition:AddInstance(spRushSubWorldReferenceObjectData)
+    partition:AddInstance(spCqlSubWorldReferenceObjectData)
 
     -- Add to LevelData 'Objects' array
     local spLevelData = LevelData(partition.primaryInstance)
     spLevelData:MakeWritable()
-    spLevelData.objects:add(spRushSubWorldReferenceObjectData)
+    spLevelData.objects:add(spCqlSubWorldReferenceObjectData)
 
     -- Create link connection to LevelData
     local referenceObjectDataLinkConnection = LinkConnection()
     referenceObjectDataLinkConnection.source = nil
-    referenceObjectDataLinkConnection.target = spRushSubWorldReferenceObjectData
+    referenceObjectDataLinkConnection.target = spCqlSubWorldReferenceObjectData
     referenceObjectDataLinkConnection.sourceFieldId = 0
     referenceObjectDataLinkConnection.targetFieldId = 0
 
@@ -43,15 +43,15 @@ Events:Subscribe('Level:RegisterEntityResources' , function(levelData)
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
 
-    -- Don't continue if the level is not Drop 'Em Like Liquid Rush
-    if string.find(levelName, 'COOP_003') == nil or gameModeName ~= 'RushLarge0' then
+    -- Don't continue if the level is not Thunder Run Conquest Large
+    if string.find(levelName, 'XP2_Skybar') == nil or gameModeName ~= 'ConquestLarge0' then
         return
     end
 
     print('Adding new registry containing relevant SubWorldReferenceObjectData for multiplayer logic...')
 
     local newRegistry = RegistryContainer()
-    newRegistry.referenceObjectRegistry:add(spRushSubWorldReferenceObjectData)
+    newRegistry.referenceObjectRegistry:add(spCqsSubWorldReferenceObjectData)
     ResourceManager:AddRegistry(newRegistry, ResourceCompartment.ResourceCompartment_Game)
 
 end)

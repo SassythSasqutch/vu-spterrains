@@ -1,6 +1,6 @@
 require 'JoinNotification'
 require 'DevTools/DebugSpSoldierSpawnClientSide'
-require 'DevTools/ForceSkipRoundCommand_Client'
+require 'DevTools/DebugUINotification'
 
 -- Multiplayer presets
 require 'MpPresets/Default/CapturePointNames'

@@ -141,6 +141,8 @@ approvedWorldPartRefGuids = {
     'AB9D1382-E9D6-4514-A26E-049DD9DBD3B8', -- AB03_Art_Light
 
     -- The Eleventh Hour COOP_010 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -- Broken as fuck? Server CTD on sending spawn messages (or before?), cannot find source.
+    -- Problem doesn't seem to be here - server loads every 5th attempt or so. Shit's fucked yo
     'EDABC9CD-A01F-3FF1-D4BC-AD76F46F33F7', -- Default (terrain)
     --'AD4295D3-0098-4C48-8050-0EE8FB6A2046', -- Sound
     --'7486B4E9-5646-4D77-A6EB-C93D2A8D6656', -- Sound_Schematic

@@ -20,10 +20,10 @@ NetEvents:Subscribe('PlayerReady', function(connectedPlayer)
 	end
 
 	-- Set customisation
-	--[[usAsltCustomisation = ResourceManager:SearchForDataContainer('Gameplay/Kits/USAssault')
+	usAsltCustomisation = ResourceManager:SearchForDataContainer('Gameplay/Kits/USAssault')
 	usAsltAppearance = ResourceManager:SearchForDataContainer('Persistence/Unlocks/Soldiers/Visual/MP/Us/MP_US_Assault_Appearance_Desert02')
 	connectedPlayer:SelectUnlockAssets(usAsltCustomisation, usAsltAppearance)
-	print('Visual customisation set!')]]
+	print('Visual customisation set!')
 
 	if connectedPlayer.isAllowedToSpawn == true then
 		print('Player is allowed to spawn.')

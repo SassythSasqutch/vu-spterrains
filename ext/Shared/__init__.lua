@@ -1,5 +1,6 @@
 require '__shared/SpLevelDataModify'
 require '__shared/SpLevelDataRemove'
+--require '__shared/SpLevelVisualEnvironmentSet'
 
 -- If Fear No Evil (SP_Tank_B) is allowed to load, Thunder Run (SP_Tank) can't load (strange quirk with Frostbite or something). 
 -- Maybe I can find a proper fix later, but for now Fear No Evil is disabled by default, because it's a bad map and Thunder Run is fucken sick.
@@ -19,16 +20,17 @@ require '__shared/MpPresets/ThunderRun_CQL/CreateGameModeSubWorldRef'
 require '__shared/MpPresets/DropEmLikeLiquid_Rush/MpDataLoad'
 require '__shared/MpPresets/DropEmLikeLiquid_Rush/CreateGameModeSubWorldRef'
 
+require '__shared/MpPresets/ZibaTower_CQL_Test/MpDataLoad'
+require '__shared/MpPresets/ZibaTower_CQL_Test/CreateGameModeSubWorldRef'
+
 --[[ View interesting partitions being loaded
 Events:Subscribe('Partition:Loaded', function(partition)
 
     if partition == nil then return end
 
-    if string.find(partition.name, 'xp2') 
-    or string.find(partition.name, 'coop_003')
-    or string.find(partition.name, 'weapon') 
-    or string.find(partition.name, 'props') 
-    or string.find(partition.name, 'objects')
+    if string.find(partition.name, 'weapon') 
+    or string.find(partition.name, 'prop') 
+    or string.find(partition.name, 'object')
     or string.find(partition.name, 'architecture') 
     or string.find(partition.name, 'sound')
     or string.find(partition.name, 'fx') 
@@ -40,7 +42,10 @@ Events:Subscribe('Partition:Loaded', function(partition)
     or string.find(partition.name, 'decals') 
     or string.find(partition.name, 'xp_raw') 
     or string.find(partition.name, 'lodgroups') 
-    or string.find(partition.name, 'animations') then return end
+    or string.find(partition.name, 'animations')
+    or string.find(partition.name, 'vehicle')
+    or string.find(partition.name, 'ui')
+    or string.find(partition.name, 'ai') then return end
 
     print(partition.name)
 
