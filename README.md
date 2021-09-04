@@ -31,7 +31,7 @@ sp_villa         -    Kaffarov
 
 By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Spawns are high above the map, allowing you to parachute down and explore/find coordinates, etc.
 
-**NOTE: In this current version, after loading you must use the console command `vu-spterrains.spawn` to force a spawn, and you *cannot fire your weapon*. Sounds on many maps are also broken at the moment - if you want them, use any commit before 20th April (initial MP implementation).**
+**NOTE: In this current version, you *cannot fire your weapon, knife, or throw anything*. Sounds are also broken at the moment - if you want them, use any commit before 20th April (initial MP implementation). You may also spawn underground: txt's NoClip mod is recommended (on the forums).**
 
 ## Gamemodes - Freecam
 
