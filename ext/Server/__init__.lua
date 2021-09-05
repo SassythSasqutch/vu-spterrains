@@ -1,5 +1,7 @@
 require 'ServerBannersAndLevelNames'
 
+-- MpPresets
+require 'MpPresets/Default/ChangeTeamNotif'
+
 -- Dev
-require 'JoinedPlayerFadeIn'
 require 'DevTools/DebugSpSoldierSpawn'

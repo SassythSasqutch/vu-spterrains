@@ -10,6 +10,7 @@
 
 approvedWorldPartRefGuids = {
     -- Hit and Run COOP_002 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -- Strange crash when moving into Levin Coopérative from Megabyte offices?
     '88312BCE-30C2-0B8B-4E77-40FBF3524B15', -- Default (terrain)
     --'928D0DAD-A194-4180-91D2-FD8FEE865FB3', -- Sound
     --'9ABE0646-ED84-477E-BAD1-B80B56106C1F', -- Sound_Schematic

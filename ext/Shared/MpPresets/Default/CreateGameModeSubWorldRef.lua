@@ -20,7 +20,7 @@ Events:Subscribe('Partition:Loaded', function(partition)
     end
 
     -- Don't continue if the level is not any singleplayer or coop level in TDM CQ.
-    -- Again, change this to have the exact same code as on line 45, so that this code only runs when we're loading the map and gamemodes we want.
+    -- Again, change this to have the exact same code as on line 45 of MpDataLoad.lua, so that this code only runs when we're loading the map and gamemodes we want.
     if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) or gameModeName ~= 'TeamDeathMatchC0' then
         return
     end
@@ -50,10 +50,13 @@ end)
 -- Just put it below where all the other MpPreset ones are. You can use those ones as examples, so you know how to do it.
 
 -- Given you just made a new preset, you probably want to move spawns, objectives, and so on.
--- Whilst I don't do any of this for this 'Default' MP preset, I do for Thunder Run Conquest Large (ThunderRun_CQL), so you can refer to that for examples. 
+-- I do all of this for Thunder Run Conquest Large (ThunderRun_CQL), so you can refer to that for examples. 
 -- I learned how to do that from the best, Bree_Arnold, so I can only point you towards their MP_Lake map if you want any more advice on how to do this. 
 -- https://github.com/FlashHit/MP_Lake
 
 -- In MP_Lake, Bree_Arnold also shows us how to set objective names (for gamemodes like Conquest or Domination).
 -- Code for this sort of thing is client-side, so it goes under 'vu-spterrains/ext/Client/MpPresets'. There you can see what I've done for ThunderRun_CQL.
 -- Remember to link to that under ext/Client/__init__.lua as well, to make sure VU loads it.
+
+-- All I did for the Default preset was move the spawns. 
+-- You can see how I did this under ext/Shared/MpPresets/Default/MapModifications/SpawnPosns.lua

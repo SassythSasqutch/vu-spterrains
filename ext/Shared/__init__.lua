@@ -14,13 +14,9 @@ require '__shared/MpPresets/AddVoiceOverLogic'
 
 require '__shared/MpPresets/Default/MpDataLoad'
 require '__shared/MpPresets/Default/CreateGameModeSubWorldRef'
+require '__shared/MpPresets/Default/SetWorldSize'
+require '__shared/MpPresets/Default/MapModifications/SpawnPosns'
 
 require '__shared/MpPresets/ThunderRun_CQL/MpDataLoad'
 require '__shared/MpPresets/ThunderRun_CQL/CreateGameModeSubWorldRef'
--- I designed the below back in January, when I hoped people would play it. That's not going to happen, so this is basically redundant, other than a good exemplar. Maybe it still exists just so I can say 'akschually it's the biggest Conquest Large map ever hahahaha'. I'm not even sure if it is anymore tho, BF2042 and all.
--- It was also designed for a different mod, so it returns many errors when it loads. You can ignore those. Vehicle spawns are broken etc., but there's no reason to fix them.
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/CapturePointA_InitialOwnerSet'
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/MainDeployments'
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/Objectives'
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/ObjectiveSpawns'
-require '__shared/MpPresets/ThunderRun_CQL/MapModifications/OOB'
+require '__shared/MpPresets/ThunderRun_CQL/MapModificationManager' -- I'm offloading all the code to start the map mod script to its own file. This way, I can guarantee they only run when Thunder Run Conquest Large is loaded. You can see how this works in MapModificationsManager.lua itself.

@@ -29,9 +29,9 @@ sp_villa         -    Kaffarov
 
 ## Gamemodes - Default
 
-By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Spawns are high above the map, allowing you to parachute down and explore/find coordinates, etc.
+By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Since there will be closed doors and invisible walls in some levels, I recommend a NoClip mod, like [txt's and Powback's vu-noclip mod here](https://github.com/romunro/VU-Noclip) - press 'v', and you will be able to move anywhere you want.
 
-**NOTE: In this current version, you *cannot fire your weapon, knife, or throw anything*. Sounds are also broken at the moment - if you want them, use any commit before 20th April (initial MP implementation). You may also spawn underground: txt's NoClip mod is recommended (on the forums).**
+**NOTE: In this current version, you *cannot fire your weapon, knife, or throw anything*. Sounds are also broken at the moment - if you want them, use any commit before 20th April (initial MP implementation).**
 
 ## Gamemodes - Freecam
 
