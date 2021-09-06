@@ -38,6 +38,27 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             ::cont::
             
         end
+
+        -- Sanitise any remaining logic
+
+        if instance.typeInfo.name == 'AlternateSpawnEntityData' then
+
+            local thisInstance = AlternateSpawnEntityData(instance)
+            thisInstance:MakeWritable()
+            thisInstance.enabled = false
+
+        end
+
+        if instance:Is('SpawnReferenceObjectData') then
+
+            local thisInstance = SpawnReferenceObjectData(instance)
+            thisInstance:MakeWritable()
+            thisInstance.enabled = false
+
+        end
+
+        -- TODO: Spawns. Manually create CharacterSpawnReferenceObjectData (to replace disabled one), see if that re-enables UI spawns.
+        -- TODO: Restart instability. Look at DescriptionAsset progression and EOR settings.
     
     end
 

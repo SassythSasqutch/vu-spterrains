@@ -11,6 +11,6 @@ Events:Subscribe('Player:Update', function(connectedPlayer)
         return
     end
 
-    ChatManager:SendMessage('If you are unable to spawn, change teams or use the console cmd \'vu-spterrains.spawn\' to spawn very high up.')
+    ChatManager:SendMessage('If you are unable to spawn, change teams or use the console cmd \'vu-spterrains.spawn\' to spawn above the map and parachute down.')
 
 end)

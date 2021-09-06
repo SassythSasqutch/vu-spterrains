@@ -1,4 +1,7 @@
 # vu-spterrains
+
+*Update: the lastest build restores stability on end-of-round, but breaks normal MP spawning. You have to go back to using the `vu-spterrains_spawn` command.*
+
 **WORK IN PROGRESS**
 Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution.
 

@@ -109,7 +109,7 @@ local spawnPosns = {
         Vec3(-1060.274414, 90.188293, 719.691406)
     ),
 
-    ['SP_Tank_B'] = LinearTransform(
+    ['SP_Tank_b'] = LinearTransform(
         Vec3(0.001511, 0.000000, 0.999999), 
         Vec3(0.000000, 1.000000, 0.000000), 
         Vec3(-0.999999, 0.000000, 0.001511), 
@@ -181,3 +181,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('5B274606-C861-411A-B60A-F23B62
 end)
 
 -- You're done. Don't forget to add this to ext/Shared/__init__.lua
+
+--[[
+
+Vec3(0.999987, 0.000000, -0.005192), 
+Vec3(0.000000, 1.000000, 0.000000), 
+Vec3(0.005192, 0.000000, 0.999987), 
+Vec3(49.988281, 64.235176, 37.814453)
+
+]]
