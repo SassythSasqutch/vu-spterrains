@@ -56,7 +56,11 @@ end)
 
 -- In MP_Lake, Bree_Arnold also shows us how to set objective names (for gamemodes like Conquest or Domination).
 -- Code for this sort of thing is client-side, so it goes under 'vu-spterrains/ext/Client/MpPresets'. There you can see what I've done for ThunderRun_CQL.
--- Remember to link to that under ext/Client/__init__.lua as well, to make sure VU loads it.
+-- Remember to link to that under ext/Client/__init__.lua as well, or somewhere else, to make sure VU loads it.
 
 -- All I did for the Default preset was move the spawns. 
 -- You can see how I did this under ext/Shared/MpPresets/Default/MapModifications/SpawnPosns.lua
+
+-- Since I moved the spawns, I also had to move the friend zones to encompass my new spawns, otherwise, you can't spawn.
+-- You can see how I did this under ext/Shared/MpPresets/Default/MapModifications/FriendZoneSet.lua
+-- I wouldn't have known to do this without the experience of keku645, so full thanks to them.

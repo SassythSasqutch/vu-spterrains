@@ -1,6 +1,6 @@
 # vu-spterrains
 
-*Update: a latest build restores stability on end-of-round, but breaks normal MP spawning. You have to go back to using the `vu-spterrains_spawn` command.*
+*Update: the latest commit allows spawning through normal MP UI only for COOP maps. SP maps have issues loading UI as a result of the fix that allowed asset creation. The console command `vu-spterrains.spawn` is still available.*
 
 **WORK IN PROGRESS**
 Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution.
@@ -36,7 +36,7 @@ If you put all of the above in your MapList (in the same order), you can also us
 
 By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Since there will be closed doors and invisible walls in some levels, I recommend a NoClip mod, like [txt's and Powback's vu-noclip mod here](https://github.com/romunro/VU-Noclip) - press 'v', and you will be able to move anywhere you want.
 
-**NOTE: In this current version, you *cannot use the UI to spawn* in the default preset. Use the console command `vu-spterrains.spawn`.**
+**NOTE: In this current version on SP maps, you cannot use the UI to spawn. Use the console command `vu-spterrains.spawn`.**
 
 ## Gamemodes - Freecam
 

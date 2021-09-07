@@ -1,3 +1,6 @@
+-- I designed the below back in January, when I hoped people would play it. That's not going to happen, so this is basically redundant, other than a good exemplar. Maybe it still exists just so I can say 'akschually it's the biggest Conquest Large map ever hahahaha'. I'm not even sure if it is anymore tho, BF2042 and all.
+-- It was also designed for a different mod, so it returns many errors when it loads. You can ignore those. Vehicle spawns are broken etc., but there's no reason to fix them.
+
 local done = false
 
 Events:Subscribe('Level:LoadResources', function()

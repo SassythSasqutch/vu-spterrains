@@ -57,7 +57,6 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
     end
 
-    -- HOLY SHIT, THIS WAS THE PROBLEM FOR ALMOST A WHOLE FUCKING YEAR TO MAKE THE UI SHOW UP, FUCKEN DOING SHOTSSSS TONGIHT CUNNNNNNTTTTT
     -- Complete thanks to Powback and kiwidog who made me take one last look at the bundles so that I could notice this
     -- Intercepts the UiPlaying bundle for the SP or COOP level, and replaces it with an MP one
     for i, bundle in pairs(bundles) do
@@ -69,6 +68,8 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             hook:Pass(bundles,compartment)
         end
     end
+
+    -- TODO: UI Pre-EOR and EOR
 
 end)
 

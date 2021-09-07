@@ -109,21 +109,21 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         end
 
-        --[[if instance.typeInfo.name == 'LevelData' then
+        if instance.typeInfo.name == 'LevelData' then
 
             local thisInstance = LevelData(instance)
             thisInstance:MakeWritable()
 
             -- Disable AI System
-            thisInstance.aiSystem = nil
+            --[[thisInstance.aiSystem = nil
 
             -- Set as MP in LevelData (redundant?)
             local levelDataLvlDesc = LevelDescription(thisInstance.levelDescription)
             levelDataLvlDesc.isCoop = false
             levelDataLvlDesc.isMenu = false
-            levelDataLvlDesc.isMultiplayer = true
+            levelDataLvlDesc.isMultiplayer = true]]
 
-        end]]
+        end
 
         if instance.typeInfo.name == 'FogComponentData' then
 
@@ -148,15 +148,5 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
         -- TODO: VisualEnvironment stuff
 
     end
-
-    if partition.primaryInstance:Is("PrefabBlueprint") then
-		for _, l_Instance in ipairs(partition.instances) do
-			if l_Instance ~= nil and l_Instance:Is("GeometryTriggerEntityData") then
-				local s_Instance = GeometryTriggerEntityData(l_Instance)
-				s_Instance:MakeWritable()
-				s_Instance.include = AreaTriggerInclude.ATNone
-			end
-		end
-	end
 
 end)

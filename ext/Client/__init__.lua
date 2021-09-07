@@ -1,4 +1,5 @@
 require 'DevTools/DebugSpSoldierSpawnClientSide'
+require 'DevTools/DebugUINotification'
 require 'DevTools/SkipToLevel'
 
 -- Multiplayer presets
