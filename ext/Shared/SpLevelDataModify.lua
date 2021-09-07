@@ -63,24 +63,24 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance.description.isMenu = false
 
             -- Enable map for all MP gamemodes
-            local cqlCategory = LevelDescriptionInclusionCategory()
-            cqlCategory.category = 'GameMode'
-            cqlCategory.mode:add('ConquestLarge0')
-            cqlCategory.mode:add('ConquestSmall0')
-            cqlCategory.mode:add('ConquestAssaultLarge0')
-            cqlCategory.mode:add('ConquestAssaultSmall0')
-            cqlCategory.mode:add('RushLarge0')
-            cqlCategory.mode:add('SquadRush0')
-            cqlCategory.mode:add('SquadDeathMatch0')
-            cqlCategory.mode:add('TeamDeathMatch0')
-            cqlCategory.mode:add('TeamDeathMatchC0')
-            cqlCategory.mode:add('Domination0')
-            cqlCategory.mode:add('GunMaster0')
-            cqlCategory.mode:add('TankSuperiority0')
-            cqlCategory.mode:add('Scavenger0')
-            cqlCategory.mode:add('CaptureTheFlag0')
-            cqlCategory.mode:add('AirSuperiority0')
-            thisInstance.categories:add(cqlCategory)
+            local mpCategory = LevelDescriptionInclusionCategory()
+            mpCategory.category = 'GameMode'
+            mpCategory.mode:add('ConquestLarge0')
+            mpCategory.mode:add('ConquestSmall0')
+            mpCategory.mode:add('ConquestAssaultLarge0')
+            mpCategory.mode:add('ConquestAssaultSmall0')
+            mpCategory.mode:add('RushLarge0')
+            mpCategory.mode:add('SquadRush0')
+            mpCategory.mode:add('SquadDeathMatch0')
+            mpCategory.mode:add('TeamDeathMatch0')
+            mpCategory.mode:add('TeamDeathMatchC0')
+            mpCategory.mode:add('Domination0')
+            mpCategory.mode:add('GunMaster0')
+            mpCategory.mode:add('TankSuperiority0')
+            mpCategory.mode:add('Scavenger0')
+            mpCategory.mode:add('CaptureTheFlag0')
+            mpCategory.mode:add('AirSuperiority0')
+            thisInstance.categories:add(mpCategory)
 
             -- Remove SP/COOP 'StartPoints'
             thisInstance.startPoints:clear()
@@ -91,8 +91,8 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             
             local thisInstance = SubWorldReferenceObjectData(instance)
 
-            for i, v in pairs(spLevelExcludedSubWorldList) do
-                if thisInstance.instanceGuid == Guid(spLevelExcludedSubWorldList[i]) then
+            for _, badSubWorldGuid in pairs(spLevelExcludedSubWorldList) do
+                if thisInstance.instanceGuid == Guid(badSubWorldGuid) then
                     print('Found SubWorld to exclude, disabling autoload for \'' .. thisInstance.bundleName .. '\'...')
                     thisInstance:MakeWritable()
                     thisInstance.autoLoad = false
@@ -109,7 +109,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         end
 
-        if instance.typeInfo.name == 'LevelData' then
+        --[[if instance.typeInfo.name == 'LevelData' then
 
             local thisInstance = LevelData(instance)
             thisInstance:MakeWritable()
@@ -123,7 +123,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             levelDataLvlDesc.isMenu = false
             levelDataLvlDesc.isMultiplayer = true
 
-        end
+        end]]
 
         if instance.typeInfo.name == 'FogComponentData' then
 
@@ -145,17 +145,18 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         end
 
+        -- TODO: VisualEnvironment stuff
+
     end
 
-end)
-
-
--- For testing with Ziba Tower
-ResourceManager:RegisterInstanceLoadHandler(Guid('3008B866-A95F-12E7-3E2A-C53B33F10695'), Guid('3008B866-A95F-12E7-3E2A-C53B33F10695'), function(instance)
-
-    local thisInstance = LevelDescriptionAsset(instance)
-    thisInstance:MakeWritable()
-
-    LevelDescriptionInclusionCategory(thisInstance.categories[1]).mode:add('ConquestLarge0')
+    if partition.primaryInstance:Is("PrefabBlueprint") then
+		for _, l_Instance in ipairs(partition.instances) do
+			if l_Instance ~= nil and l_Instance:Is("GeometryTriggerEntityData") then
+				local s_Instance = GeometryTriggerEntityData(l_Instance)
+				s_Instance:MakeWritable()
+				s_Instance.include = AreaTriggerInclude.ATNone
+			end
+		end
+	end
 
 end)
