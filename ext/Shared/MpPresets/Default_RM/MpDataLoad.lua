@@ -110,4 +110,3 @@ end)
 
 -- That's everything we need to load the multiplayer data we need. Now we need to tell the SP/COOP level how to load our chosen gamemode.
 -- That's all done by the CreateGameModeSubWorldRef.lua script.
--- After that, there are a few more optional things to do. Those are detailed at the end of the CreateGameModeSubWorldRef.lua script.

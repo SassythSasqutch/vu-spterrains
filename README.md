@@ -1,6 +1,6 @@
 # vu-spterrains
 
-*Update: the mod's finished (for now). Thanks to Bree_Arnold who found the last issue.*
+*NOTE: This branch is designed for use with the (as yet unreleased) BF3 Reality Mod.*
 
 Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution. While's the mod's first release is ready, in the future I'll try and add fixes for excluded WorldPartData (see below for more details), and add more MP-friendly Visual Environment for each level (e.g. COOP_010 has a black sky). Feel free to contribute to these yourself.
 
@@ -30,26 +30,6 @@ sp_finale        -    The Great Destroyer
 **NOTE**: Some quirk of Frostbite or something means that this mod can't load Thunder Run (sp_tank) if Fear No Evil (sp_tank_b) is allowed to load in MP - the server loads Fear No Evil every time you put 'sp_tank' in the server MapList. A dirty fix has been implemented: *if you wish to play Fear No Evil, change line 5 in `vu-spterrains/ext/Shared/__init__.lua` to 'true'*.
 
 If you put all of the above in your MapList (in the same order), you can also use the `vu-spterrains.skipto` command whilst in game. To enable this, comment back in the 'SkipToLevel' requirements in `Server/__init__.lua` and `Client/__init__.lua`.
-
-## Gamemodes - Default
-
-By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Since there will be closed doors and invisible walls in some levels, I recommend a NoClip mod, like [txt's and Powback's vu-noclip mod here](https://github.com/romunro/VU-Noclip) - press 'v', and you will be able to move anywhere you want.
-
-## Gamemodes - Freecam
-
-To use a freecam to look around, load any gamemode other than `TeamDeathMatchC0`. If the map has a custom layout (see below), don't load that gamemode either.
-
-## Gamemodes - Custom Layouts
-
-Some maps have custom layouts, making them playable for more than just exploration.
-
-| Level                      | Gamemode (as in MapList) | Description                                                                                                          |
-| -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Tehran. Maybe biggest CQL map in BF.        |
-
-More custom layouts will be made in the future.
-
-There are instructions for making your own custom layouts (aka 'presets') in `vu-spterrains/ext/Shared/MpPresets/Default`. If your preset works, message me and I will add it to the mod: the more, the merrier.
 
 ## Other issues
 
