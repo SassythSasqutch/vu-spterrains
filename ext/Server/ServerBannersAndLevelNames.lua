@@ -76,7 +76,7 @@ Events:Subscribe('Level:LoadResources', function()
     if SharedUtils:GetLevelName() == 'Levels/SP_Earthquake/SP_Earthquake' then
 
         ServerUtils:SetCustomMapName('Operation Swordbreaker')
-        RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/eAEv7ua.jpg'})
+        RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/i1GW3vx.jpg'})
 
     end
 
@@ -166,7 +166,7 @@ Events:Subscribe('Level:LoadResources', function()
     if SharedUtils:GetLevelName() == 'Levels/SP_Villa/SP_Villa' then
 
         ServerUtils:SetCustomMapName('Kaffarov\'s Villa')
-        RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/FsBNzd5.jpg'})
+        RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/VS4sq6j.jpg'})
 
     end
 

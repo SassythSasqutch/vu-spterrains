@@ -56,8 +56,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance.enabled = false
 
         end
-
-        -- TODO: Kaffarov server banner
     
     end
 

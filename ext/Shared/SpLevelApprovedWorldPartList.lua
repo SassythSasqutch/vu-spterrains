@@ -649,7 +649,7 @@ approvedWorldPartRefGuids = {
     'D28BECF2-4CC5-4859-8A6E-0FE33C29C592', -- Drive_PC_Art
     'BCF88E61-76DE-4A97-8DF9-74BE465385C1', -- Garden_Art
     '0C958FD2-53F9-4136-8F1E-F8EE615FB49F', -- Garden_PC_Art
-    --'4186466D-DE1E-4643-A84F-EB7153F411D9', -- GateHouse_Art --------------------------------------------- PROBLEMATIC: server CTD on sending spawn messages
+    '4186466D-DE1E-4643-A84F-EB7153F411D9', -- GateHouse_Art
     '773A76D3-0A27-47E3-B189-E26F6B41380A', -- GateHouse_SND (sound)
     'E8118191-0818-4EA6-8F72-65954F4A76AA', -- Halo_Art
     '6814A128-9179-45CD-81C0-7F415FCA2D39', -- Halo_FX
@@ -663,5 +663,6 @@ approvedWorldPartRefGuids = {
     'A0D08ABC-2524-4783-9B0E-106E1BE3DF77', -- Villa_SOUND_Schematic
     'B12A0A29-8117-433F-AD97-98668834FD85', -- Villa_PC_Art
     'D879E38A-622C-4CA8-9440-0A96F3A1A96E', -- Villa_Background
+    'B086DC7D-4A0F-4B50-96D5-88B7CADD0006', -- Basement_Logic -- NOTE: Requires SpMapModifications for SP_Villa courtesy of keku645
 
 }
