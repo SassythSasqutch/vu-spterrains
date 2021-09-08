@@ -62,12 +62,19 @@ If you are making a map with this mod, you might want to remove whole parts of t
 ## Thanks
 
 *NoFate*, *kiwidog*, *Timse*, *Imposter*, *lujara*, *Paulofonta*, *Rodney*, and everyone in the VU team, for the VU framework - it seems, Frostbite was not complicated enough for you guys to make mods after all;
+
 again *kiwidog*, for proving this was possible and making me take one last look at bundle loading, which fixed one of the last remaining problems;
+
 *keku645*, for... 'motivating' me... to say the least (no, he didn't harass me daily for updates on the mod, why would you think that?), and providing odd snippets of potentially useful material (especially about FriendZones, which solved one of the final issues with the mod);
+
 *Powback*, *kiwidog*, and *Bree_Arnold* and all others who've worked on the PatchSPCOOP and other similar mods which were a great reference;
+
 *FoolHen*, *Powback*, *3ti65*, and the *BF3: Reality Mod team*, for help with VEXT, and - of course - giving me a reason to keep working on this;
+
 *Bree_Arnold*, for their help with VEXT;
+
 *Janssent*, for their magical tools and help VEXT;
+
 *reirei*, *Breaknix*, and everyone else who helped me learn Lua and VEXT between October 2020 and today.
 
 ##

@@ -118,9 +118,9 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance.aiSystem = nil
 
             -- Set as MP in LevelData (thanks to Bree_Arnold for finding a problem with what used to be below)
-            thisInstance.levelDescription.isCoop = false
+            --[[thisInstance.levelDescription.isCoop = false
             thisInstance.levelDescription.isMenu = false
-            thisInstance.levelDescription.isMultiplayer = true
+            thisInstance.levelDescription.isMultiplayer = true]]
 
         end
 

@@ -7,8 +7,9 @@ allowFearNoEvil = false
 require '__shared/SpLevelDataModify'
 require '__shared/SpLevelDataRemove'
 --require '__shared/SpLevelVisualEnvironmentSet'
+require '__shared/SpMapModifications/_SpMapModificationManager'
 
--- Multiplayer presets
+-- Multiplayer Presets
 require '__shared/MpPresets/MpCommonDataLoad'
 require '__shared/MpPresets/AddVoiceOverLogic'
 
