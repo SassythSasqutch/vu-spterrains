@@ -49,7 +49,7 @@ local spawnPosns = {
         Vec3(-1229.481445, 182.361130, -457.342773)
     ),
 
-    ['SP_Earthquake'] = LinearTransform(
+    ['SP_Earthquake/'] = LinearTransform(
         Vec3(0.999996, 0.000000, 0.002901), 
         Vec3(0.000000, 1.000000, 0.000000), 
         Vec3(-0.002901, 0.000000, 0.999996), 

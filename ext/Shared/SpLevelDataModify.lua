@@ -115,13 +115,12 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance:MakeWritable()
 
             -- Disable AI System
-            --[[thisInstance.aiSystem = nil
+            thisInstance.aiSystem = nil
 
-            -- Set as MP in LevelData (redundant?)
-            local levelDataLvlDesc = LevelDescription(thisInstance.levelDescription)
-            levelDataLvlDesc.isCoop = false
-            levelDataLvlDesc.isMenu = false
-            levelDataLvlDesc.isMultiplayer = true]]
+            -- Set as MP in LevelData (thanks to Bree_Arnold for finding a problem with what used to be below)
+            thisInstance.levelDescription.isCoop = false
+            thisInstance.levelDescription.isMenu = false
+            thisInstance.levelDescription.isMultiplayer = true
 
         end
 

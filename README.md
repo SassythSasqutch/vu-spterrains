@@ -1,9 +1,8 @@
 # vu-spterrains
 
-*Update: the latest commit allows spawning through normal MP UI only for COOP maps. SP maps have issues loading UI as a result of the fix that allowed asset creation. The console command `vu-spterrains.spawn` is still available.*
+*Update: the mod's finished (for now). Thanks to Bree_Arnold who found the last issue.*
 
-**WORK IN PROGRESS**
-Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution.
+Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution. While's the mod's first release is ready, in the future I'll try and add fixes for excluded WorldPartData (see below for more details), and add more MP-friendly Visual Environment for each level (e.g. COOP_010 has a black sky). Feel free to contribute to these yourself.
 
 In your server MapList, load the level like any other with any gamemode. The options are below, in chronological order:
 
@@ -30,13 +29,11 @@ sp_finale        -    The Great Destroyer
 
 **NOTE**: Some quirk of Frostbite or something means that this mod can't load Thunder Run (sp_tank) if Fear No Evil (sp_tank_b) is allowed to load in MP - the server loads Fear No Evil every time you put 'sp_tank' in the server MapList. A dirty fix has been implemented: *if you wish to play Fear No Evil, change line 5 in `vu-spterrains/ext/Shared/__init__.lua` to 'true'*.
 
-If you put all of the above in your MapList (in the same order), you can also use the `vu-spterrains.skipto` command whilst in game.
+If you put all of the above in your MapList (in the same order), you can also use the `vu-spterrains.skipto` command whilst in game. To enable this, comment back in the 'SkipToLevel' requirements in `Server/__init__.lua` and `Client/__init__.lua`.
 
 ## Gamemodes - Default
 
 By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Since there will be closed doors and invisible walls in some levels, I recommend a NoClip mod, like [txt's and Powback's vu-noclip mod here](https://github.com/romunro/VU-Noclip) - press 'v', and you will be able to move anywhere you want.
-
-**NOTE: In this current version on SP maps, you cannot use the UI to spawn. Use the console command `vu-spterrains.spawn`.**
 
 ## Gamemodes - Freecam
 
@@ -50,8 +47,6 @@ Some maps have custom layouts, making them playable for more than just explorati
 | -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Tehran. Maybe biggest CQL map in BF.        |
 
-*Note that when the above is loaded, UI spawning works. The console command isn't required.*
-
 More custom layouts will be made in the future.
 
 There are instructions for making your own custom layouts (aka 'presets') in `vu-spterrains/ext/Shared/MpPresets/Default`. If your preset works, message me and I will add it to the mod: the more, the merrier.
@@ -63,6 +58,17 @@ Many SP levels have issues with certain parts of the map (WorldPart instances, i
 ## (For map makers) Excluding SubWorlds
 
 If you are making a map with this mod, you might want to remove whole parts of the level. To do so, see the instructions in `vu-spterrains/ext/Shared/SpLevelExcludedSubWorldList.lua`.
+
+## Thanks
+
+*NoFate*, *kiwidog*, *Timse*, *Imposter*, *lujara*, *Paulofonta*, *Rodney*, and everyone in the VU team, for the VU framework - it seems, Frostbite was not complicated enough for you guys to make mods after all;
+again *kiwidog*, for proving this was possible and making me take one last look at bundle loading, which fixed one of the last remaining problems;
+*keku645*, for... 'motivating' me... to say the least (no, he didn't harass me daily for updates on the mod, why would you think that?), and providing odd snippets of potentially useful material (especially about FriendZones, which solved one of the final issues with the mod);
+*Powback*, *kiwidog*, and *Bree_Arnold* and all others who've worked on the PatchSPCOOP and other similar mods which were a great reference;
+*FoolHen*, *Powback*, *3ti65*, and the *BF3: Reality Mod team*, for help with VEXT, and - of course - giving me a reason to keep working on this;
+*Bree_Arnold*, for their help with VEXT;
+*Janssent*, for their magical tools and help VEXT;
+*reirei*, *Breaknix*, and everyone else who helped me learn Lua and VEXT between October 2020 and today.
 
 ##
 

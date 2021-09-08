@@ -20,7 +20,8 @@ require '__shared/MpPresets/ThunderRun_CQL/MpDataLoad'
 require '__shared/MpPresets/ThunderRun_CQL/CreateGameModeSubWorldRef'
 require '__shared/MpPresets/ThunderRun_CQL/MapModifications/_MapModificationManager'
 
-Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
+-- Print every bundle that is loaded.
+--[[Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
 
     for _, bundle in pairs(bundles) do
 
@@ -28,4 +29,4 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
         
     end
 
-end)
+end)]]
