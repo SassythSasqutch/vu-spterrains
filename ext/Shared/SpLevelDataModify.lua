@@ -111,16 +111,14 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         if instance.typeInfo.name == 'LevelData' then
 
+            -- Thanks to Bree_Arnold for giving me a hand with the below
             local thisInstance = LevelData(instance)
             thisInstance:MakeWritable()
 
-            -- Disable AI System
-            thisInstance.aiSystem = nil
-
-            -- Set as MP in LevelData (thanks to Bree_Arnold for finding a problem with what used to be below)
-            --[[thisInstance.levelDescription.isCoop = false
+            -- Set as MP in LevelData
+            thisInstance.levelDescription.isCoop = false
+            thisInstance.levelDescription.isMultiplayer = true
             thisInstance.levelDescription.isMenu = false
-            thisInstance.levelDescription.isMultiplayer = true]]
 
         end
 
