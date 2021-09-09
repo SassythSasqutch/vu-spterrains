@@ -27,7 +27,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
     if #bundles == 1 and bundles[1] == levelName then
 
-        print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Thunder Run CQL multiplayer preset...')
+        print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Kavir Desert (RM) multiplayer preset...')
 
         print('Injecting MP bundles, with Reality Mod bundles...')
 
@@ -79,18 +79,5 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     print('Adding Operation Firestorm Conquest Large registry...')
     local firestormCqsRegistry = ResourceManager:FindInstanceByGuid(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('320240BC-173A-5E32-CA75-51E15AC01313'))
     ResourceManager:AddRegistry(firestormCqsRegistry, ResourceCompartment.ResourceCompartment_Game)
-
-    -- RM
-
-    print('Adding RM registries...')
-
-    local s_Coop9Registry = ResourceManager:FindInstanceByGuid(Guid('F94C5091-E69C-11DF-9B0E-AF9CA6E0236B'), Guid('F05798B2-31EC-210D-CC1D-0F7535BECA30'))
-	local s_SpBankRideSubRegistry = ResourceManager:FindInstanceByGuid(Guid('8148A1BB-8F21-4E40-8A8F-2126000ABCD4'), Guid('9F9CABAF-21C2-EF4A-B35D-4358AEBA7565'))
-
-    s_Coop9Registry = RegistryContainer(s_Coop9Registry)
-	ResourceManager:AddRegistry(s_Coop9Registry, ResourceCompartment.ResourceCompartment_Game)
-
-	s_SpBankRideSubRegistry = RegistryContainer(s_SpBankRideSubRegistry)
-	ResourceManager:AddRegistry(s_SpBankRideSubRegistry, ResourceCompartment.ResourceCompartment_Game)
 
 end)

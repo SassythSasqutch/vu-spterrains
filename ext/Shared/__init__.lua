@@ -7,25 +7,15 @@ allowFearNoEvil = false
 require '__shared/SpLevelDataModify'
 require '__shared/SpLevelDataRemove'
 --require '__shared/SpLevelVisualEnvironmentSet'
-require '__shared/SpMapModifications/_SpMapModificationManager'
 
 -- Multiplayer Presets
 require '__shared/MpPresets/MpCommonDataLoad'
 require '__shared/MpPresets/AddVoiceOverLogic'
 
-require '__shared/MpPresets/Default_RM/MpDataLoad'
-require '__shared/MpPresets/Default_RM/CreateGameModeSubWorldRef'
+-- COOP_006
+require '__shared/MpPresets/PanjshirValley_RM/MpDataLoad'
+require '__shared/MpPresets/PanjshirValley_RM/CreateGameModeSubWorldRef'
 
-require '__shared/MpPresets/ThunderRun_CQL_RM/MpDataLoad'
-require '__shared/MpPresets/ThunderRun_CQL_RM/CreateGameModeSubWorldRef'
-
--- Print every bundle that is loaded.
---[[Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
-
-    for _, bundle in pairs(bundles) do
-
-        print(bundle)
-        
-    end
-
-end)]]
+-- SP_Tank
+require '__shared/MpPresets/KavirDesert_RM/MpDataLoad'
+require '__shared/MpPresets/KavirDesert_RM/CreateGameModeSubWorldRef'
