@@ -7,7 +7,7 @@ Events:Subscribe('Level:LoadResources', function()
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
 
-    -- Don't continue if the level is not Thunder Run Conquest Large
+    -- Don't continue if the level is not singleplayer or co-op in Team Deathmatch CQ
     if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) or gameModeName ~= 'TeamDeathMatchC0' then
         return
     end
