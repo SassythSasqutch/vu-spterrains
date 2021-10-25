@@ -7,7 +7,7 @@ Events:Subscribe('Level:LoadResources', function()
     ResourceManager:MountSuperBundle('levels/sp_tank/sp_tank')
     ResourceManager:MountSuperBundle('levels/coop_009/coop_009')
     ResourceManager:MountSuperBundle('levels/sp_bank/sp_bank')
-    ResourceManager:MountSuperBundle('levels/xp5_001/xp5_001')
+    --ResourceManager:MountSuperBundle('levels/xp5_001/xp5_001')
 
 end)
 
@@ -43,7 +43,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             'Levels/Coop_009/Coop_009',
 			'Levels/SP_Bank/SP_Bank',
 			'Levels/SP_Bank/Ride_SUB',
-            'Levels/XP5_001/XP5_001',
+            --'Levels/XP5_001/XP5_001',
             bundles[1],
         }
 
