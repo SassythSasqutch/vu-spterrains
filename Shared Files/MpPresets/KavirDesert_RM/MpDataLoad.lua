@@ -1,5 +1,5 @@
 -- Mount superbundles
-Events:Subscribe('Level:LoadResources', function()
+--[[Events:Subscribe('Level:LoadResources', function()
 
     print('Mounting Operation Firestorm superbundle for MP logic...')
     ResourceManager:MountSuperBundle('levels/mp_012/mp_012')
@@ -8,7 +8,7 @@ Events:Subscribe('Level:LoadResources', function()
     ResourceManager:MountSuperBundle('levels/coop_009/coop_009')
     ResourceManager:MountSuperBundle('levels/sp_bank/sp_bank')
 
-end)
+end)]]
 
 -- Inject bundles
 Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)

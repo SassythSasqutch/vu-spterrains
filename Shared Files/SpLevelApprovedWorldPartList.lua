@@ -6,8 +6,6 @@
 -- Often, there were more WorldPartReferenceObjectData contained in SubWorlds (for coop, called something like AB01_Art_Parent; for SP, something like Bank_SUB, but usually named after the SubWorld).
 -- I may have missed some out, or some may be unimportant or undesired for what you're doing, so feel free to remove them from this list.
 
--- TODO: Look into global sound, sound schematics, etc. causing client CTD
-
 approvedWorldPartRefGuids = {
     -- Hit and Run COOP_002 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '88312BCE-30C2-0B8B-4E77-40FBF3524B15', -- Default (terrain)

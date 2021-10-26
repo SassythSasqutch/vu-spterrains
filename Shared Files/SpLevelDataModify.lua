@@ -1,38 +1,4 @@
-require '__shared/SpLevelExcludedSubWorldList'
-
--- Set SP loading screens (COOP are already OK - seem to be already designed for MP) - CURRENTLY DYSFUNCTIONAL, MAY NOT BE EASILY POSSIBLE
-
-Events:Subscribe('Extension:Loaded', function()
-
-    local spUILevelDescriptionComponentGuids = {
-        '48FCF68E-9643-9EDE-C162-DBDC7C5A60DE', -- Operation Guillotine SP_Bank
-        '56C9CB41-3AA6-AB66-FCE9-4AE293ACC7F8', -- Operation Swordbreaker SP_Earthquake
-        '4BD8BF47-4ACD-4EA7-C04D-F3F17C9F3635', -- Uprising SP_Earthquake2
-        '18E70353-5B15-5E05-579D-44A3562D71B6', -- The Great Destroyer SP_Finale
-        '3B9CD74A-844C-ABCC-369B-E02F7FF9BECB', -- Going Hunting SP_Jet
-        '4D019FE2-07A8-5D69-7902-06461C370531', -- Semper Fidelis SP_New_York
-        'D954439B-DDA3-99FD-46A8-DD22D8C22B5F', -- Comrades SP_Paris
-        '8368F7BF-C156-EB46-FCCE-82CC7E92E2AD', -- Night Shift SP_Sniper
-        '6D701F2A-DCB4-3351-FEC5-6334F96688FB', -- Thunder Run SP_Tank
-        'FD7D2AC3-19DC-4B82-1598-34DD7AC5BA47', -- Fear No Evil SP_Tank_B
-        '480B7A3D-E517-62B4-75FF-A91393B8EB89', -- Rock And A Hard Place SP_Valley
-        '4166F3A8-DAF2-7338-EA99-B1E05948E8F9'  -- Kaffarov SP_Villa
-    }
-
-    for _, spUILevelDescriptionComponentGuid in pairs(spUILevelDescriptionComponentGuids) do
-
-        local thisUILevelDescriptionComponent_Uncasted = ResourceManager:SearchForInstanceByGuid(Guid(spUILevelDescriptionComponentGuid))
-
-        if thisUILevelDescriptionComponent_Uncasted ~= nil then
-            local thisUILevelDescriptionComponent = UILevelDescriptionComponent(thisUILevelDescriptionComponent_Uncasted)
-            thisUILevelDescriptionComponent:MakeWritable()
-            thisUILevelDescriptionComponent.mpLoadingAssetPath = 'UI/Assets/LoadingScreen'
-            thisUILevelDescriptionComponent.spLoadingAssetPath = ''
-        end
-
-    end
-
-end)
+require '__shared/SpTerrains/SpLevelExcludedSubWorldList'
 
 Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
 
@@ -93,7 +59,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
             for _, badSubWorldGuid in pairs(spLevelExcludedSubWorldList) do
                 if thisInstance.instanceGuid == Guid(badSubWorldGuid) then
-                    print('Found SubWorld to exclude, disabling autoload for \'' .. thisInstance.bundleName .. '\'...')
+                    --print('Found SubWorld to exclude, disabling autoload for \'' .. thisInstance.bundleName .. '\'...')
                     thisInstance:MakeWritable()
                     thisInstance.autoLoad = false
                     goto cont

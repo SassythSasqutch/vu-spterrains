@@ -1,4 +1,4 @@
-require '__shared/SpLevelApprovedWorldPartList'
+require '__shared/SpTerrains/SpLevelApprovedWorldPartList'
 
 Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
 
@@ -21,9 +21,9 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             for i, v in pairs(approvedWorldPartRefGuids) do
                 if thisInstance.instanceGuid == Guid(approvedWorldPartRefGuids[i]) then
                     if thisInstance.blueprint.name == '' then
-                        print('WorldPart (unknown) approved.')
+                        --print('WorldPart (unknown) approved.')
                     else
-                        print('WorldPart \'' .. thisInstance.blueprint.name .. '\' approved.')
+                        --print('WorldPart \'' .. thisInstance.blueprint.name .. '\' approved.')
                     end
                     goto cont
                 end

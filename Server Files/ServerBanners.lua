@@ -8,9 +8,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_002/COOP_002' then
 
-        -- Set custom map name
-        ServerUtils:SetCustomMapName('Hit and Run')
-
         -- Set server banner
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/zv33mTZ.jpg'})
 
@@ -20,7 +17,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_003/COOP_003' then
 
-        ServerUtils:SetCustomMapName('Drop \'Em Like Liquid')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/aev015H.jpg'})
 
     end
@@ -29,7 +25,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_006/COOP_006' then
 
-        ServerUtils:SetCustomMapName('Fire from the Sky')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/4x5sdl4.jpg'})
 
     end
@@ -38,7 +33,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_007/COOP_007' then
 
-        ServerUtils:SetCustomMapName('Operation Exodus')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/OHTswJF.jpg'})
 
     end
@@ -47,7 +41,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_009/COOP_009' then
 
-        ServerUtils:SetCustomMapName('Exfiltration')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/Tf5j63i.jpg'})
 
     end
@@ -56,7 +49,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/COOP_010/COOP_010' then
 
-        ServerUtils:SetCustomMapName('The Eleventh Hour')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/9E8IBc3.jpg'})
 
     end
@@ -66,7 +58,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Bank/SP_Bank' then
 
-        ServerUtils:SetCustomMapName('Operation Guillotine')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/4hvwq7U.jpg'})
 
     end
@@ -75,7 +66,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Earthquake/SP_Earthquake' then
 
-        ServerUtils:SetCustomMapName('Operation Swordbreaker')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/i1GW3vx.jpg'})
 
     end
@@ -84,7 +74,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Earthquake2/SP_Earthquake2' then
 
-        ServerUtils:SetCustomMapName('Uprising')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/RYPsLuZ.jpg'})
 
     end
@@ -93,7 +82,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Finale/SP_Finale' then
 
-        ServerUtils:SetCustomMapName('The Great Destroyer')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/8nrcHLT.jpg'})
 
     end
@@ -102,7 +90,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Jet/SP_Jet' then
 
-        ServerUtils:SetCustomMapName('Going Hunting')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/GzPgiX9.jpg'})
 
     end
@@ -111,7 +98,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_New_York/SP_New_York' then
 
-        ServerUtils:SetCustomMapName('Semper Fidelis')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/qz9xETm.jpg'})
 
     end
@@ -120,7 +106,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Paris/SP_Paris' then
 
-        ServerUtils:SetCustomMapName('Comrades')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/mTlnWg9.jpg'})
 
     end
@@ -129,7 +114,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Sniper/SP_Sniper' then
 
-        ServerUtils:SetCustomMapName('Night Shift')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/WSjk0So.jpg'})
 
     end
@@ -138,7 +122,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Tank/SP_Tank' then
 
-        ServerUtils:SetCustomMapName('Thunder Run')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/eiDLOtJ.jpg'})
 
     end
@@ -147,7 +130,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Tank_b/SP_Tank_b' then
 
-        ServerUtils:SetCustomMapName('Fear No Evil')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/mV3guKq.jpg'})
 
     end
@@ -156,7 +138,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Valley/SP_Valley' then
 
-        ServerUtils:SetCustomMapName('Rock and Hard Place')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/GPZAhT0.jpg'})
 
     end
@@ -165,7 +146,6 @@ Events:Subscribe('Level:LoadResources', function()
 
     if SharedUtils:GetLevelName() == 'Levels/SP_Villa/SP_Villa' then
 
-        ServerUtils:SetCustomMapName('Kaffarov\'s Villa')
         RCON:SendCommand('vu.ServerBanner', {'https://i.imgur.com/VS4sq6j.jpg'})
 
     end

@@ -1,18 +1,7 @@
--- Mount superbundles
-Events:Subscribe('Level:LoadResources', function()
+-- NOTE: Most data loading is performed by the Reality Mod Dynamic Bundle Loader
 
-    print('Mounting Damavand Peak superbundle for MP logic...')
-    ResourceManager:MountSuperBundle('levels/mp_013/mp_013')
-    -- RM
-    ResourceManager:MountSuperBundle('levels/sp_tank/sp_tank')
-    ResourceManager:MountSuperBundle('levels/coop_009/coop_009')
-    ResourceManager:MountSuperBundle('levels/sp_bank/sp_bank')
-    --ResourceManager:MountSuperBundle('levels/xp5_001/xp5_001')
-
-end)
-
--- Inject bundles
-Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
+-- Hook the SP/COOP UI and replace it with MP UI (not perfomed by RM)
+Hooks:Install('ResourceManager:LoadBundles', 100, function(hook, bundles, compartment)
 
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
@@ -24,31 +13,6 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
     -- Don't continue if the level is not Fire From The Sky Conquest Large
     if string.find(levelName, 'COOP_006') == nil or gameModeName ~= 'ConquestLarge0' then
         return
-    end
-
-    if #bundles == 1 and bundles[1] == levelName then
-
-        print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Panjshir Valley (RM) multiplayer preset...')
-
-        print('Injecting MP bundles, with Reality Mod bundles...')
-
-        -- NOTE: Also injecting Reality Mod bundles
-        bundles = {
-            'ui/flow/bundle/loadingbundlemp',
-            'levels/mp_013/mp_013',
-            'levels/mp_013/conquestlarge',
-            -- RM
-            'Levels/SP_Tank/SP_Tank',
-            'Levels/SP_Tank/DesertFort',
-            'Levels/Coop_009/Coop_009',
-			'Levels/SP_Bank/SP_Bank',
-			'Levels/SP_Bank/Ride_SUB',
-            --'Levels/XP5_001/XP5_001',
-            bundles[1],
-        }
-
-        hook:Pass(bundles, compartment)
-
     end
     
     for i, bundle in pairs(bundles) do
@@ -63,7 +27,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
 end)
 
--- Add resources to registry
+-- Add resources to registry (not performed by RM)
 
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
 
@@ -75,11 +39,9 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
         return
     end
 
-    print('Adding Damavand Peak registry...')
     local damavandRegistry = ResourceManager:FindInstanceByGuid(Guid('8683F4BB-CD57-11DF-A251-CAB801F86363'), Guid('7C37A538-6C37-4BCF-4FF5-31E534B5C053'))
     ResourceManager:AddRegistry(damavandRegistry, ResourceCompartment.ResourceCompartment_Game)
 
-    print('Adding Damavand Peak Conquest Large registry...')
     local damavandCqlRegistry = ResourceManager:FindInstanceByGuid(Guid('1CEC6C7E-1629-4631-B326-1A134BC6EF27'), Guid('6196137B-50D6-4607-98AE-900BACF47065'))
     ResourceManager:AddRegistry(damavandCqlRegistry, ResourceCompartment.ResourceCompartment_Game)
 
