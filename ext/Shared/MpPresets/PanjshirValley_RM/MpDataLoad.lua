@@ -1,7 +1,7 @@
 -- NOTE: Most data loading is performed by the Reality Mod Dynamic Bundle Loader
 
 -- Hook the SP/COOP UI and replace it with MP UI (not perfomed by RM)
-Hooks:Install('ResourceManager:LoadBundles', 100, function(hook, bundles, compartment)
+Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
 
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
