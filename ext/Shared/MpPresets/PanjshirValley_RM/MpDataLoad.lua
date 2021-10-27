@@ -28,7 +28,6 @@ Hooks:Install('ResourceManager:LoadBundles', 100, function(hook, bundles, compar
 end)
 
 -- Add resources to registry (not performed by RM)
-
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
 
     local levelName = SharedUtils:GetLevelName()
