@@ -11,6 +11,6 @@ require '__shared/SpLevelDataRemove'
 require '__shared/MpPresets/PanjshirValley_RM/MpDataLoad'
 require '__shared/MpPresets/PanjshirValley_RM/CreateGameModeSubWorldRef'
 
--- SP_Tank (not ready)
---require '__shared/MpPresets/KavirDesert_RM/MpDataLoad'
---require '__shared/MpPresets/KavirDesert_RM/CreateGameModeSubWorldRef'
+-- SP_Tank
+require '__shared/MpPresets/KavirDesert_RM/MpDataLoad'
+require '__shared/MpPresets/KavirDesert_RM/CreateGameModeSubWorldRef'

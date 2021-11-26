@@ -11,12 +11,15 @@ Events:Subscribe('Partition:Loaded', function(partition)
         return
     end
 
+    ResourceManager:RegisterInstanceLoadHandler(Guid('8BB2506F-493A-11DF-B052-CC4B5D6E8131'), Guid('8FE1F5F4-6C8F-4185-B478-2DDEA1CCA686'), function(instance)
 
-    local firestormCqlSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('8BB2506F-493A-11DF-B052-CC4B5D6E8131'), Guid('8FE1F5F4-6C8F-4185-B478-2DDEA1CCA686')))
+        local firestormCqlSubWorldReferenceObjectData = SubWorldReferenceObjectData(instance)
 
-    -- Add to LevelData 'Objects' array
-    local spLevelData = LevelData(partition.primaryInstance)
-    spLevelData:MakeWritable()
-    spLevelData.objects:add(firestormCqlSubWorldReferenceObjectData)
+        -- Add to LevelData 'Objects' array
+        local spLevelData = LevelData(partition.primaryInstance)
+        spLevelData:MakeWritable()
+        spLevelData.objects:add(firestormCqlSubWorldReferenceObjectData)
+
+    end)
 
 end)
