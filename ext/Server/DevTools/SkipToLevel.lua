@@ -22,7 +22,7 @@ for i, level in pairs(levels) do
 
     NetEvents:Subscribe(level, function()
 
-        local levelIndex = tostring(i) -- Thanks to Bree_Arnold for the tostring() thing
+        local levelIndex = tostring(i-1) -- Thanks to Bree_Arnold for the tostring() thing
 
         print('Skipping to level '..level..' at index '..levelIndex..' in MapList.')
     
