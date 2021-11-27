@@ -2,7 +2,7 @@ require '__shared/SpLevelExcludedSubWorldList'
 
 -- Set SP loading screens (COOP are already OK - seem to be already designed for MP) - CURRENTLY DYSFUNCTIONAL, MAY NOT BE EASILY POSSIBLE
 
-Events:Subscribe('Extension:Loaded', function()
+--[[Events:Subscribe('Extension:Loaded', function()
 
     local spUILevelDescriptionComponentGuids = {
         '48FCF68E-9643-9EDE-C162-DBDC7C5A60DE', -- Operation Guillotine SP_Bank
@@ -32,7 +32,7 @@ Events:Subscribe('Extension:Loaded', function()
 
     end
 
-end)
+end)]]
 
 Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
 
@@ -141,8 +141,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance.viewDistance = 999999
 
         end
-
-        -- TODO: VisualEnvironment stuff
 
     end
 
