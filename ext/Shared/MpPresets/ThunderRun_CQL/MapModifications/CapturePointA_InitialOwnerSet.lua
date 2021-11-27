@@ -6,10 +6,14 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     --print('Changing CapturePointPrefab for Desert Fort...')
     local thisInstance = ReferenceObjectData(instance)
-    local capturePointStartInTopBp = SpatialPrefabBlueprint(ResourceManager:FindInstanceByGuid(Guid('4768E276-9799-4E73-A172-32080E8D826E'), Guid('411D87B8-4A6B-49F6-A2C9-0081F5113C33')))
+
+    ResourceManager:RegisterInstanceLoadHandler(Guid('4768E276-9799-4E73-A172-32080E8D826E'), Guid('411D87B8-4A6B-49F6-A2C9-0081F5113C33'), function(instance)
     
-    thisInstance:MakeWritable()
-    thisInstance.blueprint = capturePointStartInTopBp
+        local capturePointStartInTopBp = SpatialPrefabBlueprint(instance)
+        thisInstance:MakeWritable()
+        thisInstance.blueprint = capturePointStartInTopBp
+    
+    end)
 
 end)
 

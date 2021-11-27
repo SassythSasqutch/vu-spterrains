@@ -18,6 +18,8 @@ Events:Subscribe('Level:LoadResources', function()
     print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Thunder Run CQL multiplayer preset...')
 
     ResourceManager:MountSuperBundle('levels/mp_012/mp_012')
+    ResourceManager:MountSuperBundle('xp1chunks')
+    ResourceManager:MountSuperBundle('levels/xp1_002/xp1_002')
 
 end)
 
@@ -43,6 +45,8 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             'ui/flow/bundle/loadingbundlemp',
             'levels/mp_012/mp_012',
             'levels/mp_012/conquest_large',
+            'levels/xp1_002/xp1_002', -- Gulf of Oman only for BTR and a couple map-making assets
+            'levels/xp1_002/cq_s', -- Gulf of Oman Conquest Small
         }
 
         for _, spBundle in pairs(SpBundleTable[levelName]) do
@@ -84,5 +88,10 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     print('Adding Operation Firestorm Conquest Large registry...')
     local firestormCqsRegistry = ResourceManager:FindInstanceByGuid(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('320240BC-173A-5E32-CA75-51E15AC01313'))
     ResourceManager:AddRegistry(firestormCqsRegistry, ResourceCompartment.ResourceCompartment_Game)
+
+    -- Gulf of Oman Conquest Small (for BTR, map-making assets)
+    print('Adding Gulf of Oman CQS registry...')
+    local gulfRegistry = ResourceManager:FindInstanceByGuid(Guid('BA57F26B-896D-4745-80EC-2148AA4FABED'), Guid('4CA67086-4270-BDEC-C570-A5A709959189'))
+    ResourceManager:AddRegistry(gulfRegistry, ResourceCompartment.ResourceCompartment_Game)
 
 end)

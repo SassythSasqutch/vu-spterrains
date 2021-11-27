@@ -96,9 +96,9 @@ end)
 
 -- UH-1Y Spawn (generated new)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
-
-    local venomBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('97945D87-011D-11E0-B97C-FC495C335A52'), Guid('0E09B2D0-BA4A-1509-E1D2-949FB0C04DBE')))
+ResourceManager:RegisterInstanceLoadHandler(Guid('97945D87-011D-11E0-B97C-FC495C335A52'), Guid('0E09B2D0-BA4A-1509-E1D2-949FB0C04DBE'), function(instance)
+    
+    local venomBp = VehicleBlueprint(instance)
     local newVenomGuid = Guid('VIC0000U-0000-0000-0000-000000000000')
     local venomSpawn1 = LinearTransform(
         Vec3(0.747369, -0.042789, -0.663029),
@@ -106,9 +106,9 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
         Vec3(0.663945, 0.010798, 0.747704),
         Vec3(-2116.036377, 75.144028, -498.519623)
     )
-    FirestormCqlCreateVehicle(venomBp, venomSpawn1, newVenomGuid, 61518, TeamId.TeamNeutral, false)
+    FirestormCqlCreateVehicle(venomBp, venomSpawn1, newVenomGuid, 61518, TeamId.TeamNeutral, false)    
 
-end) 
+end)
 
 -- HMMWV Spawn (replacing M1A1)
 
@@ -126,8 +126,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = humveeSpawn1
 
-    local humveeBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F')))
-    thisInstance.blueprint = humveeBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F'), function(instance)
+    
+        local humveeBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = humveeBp    
+    
+    end)
 
 end)
 
@@ -147,8 +151,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = humveeSpawn2
 
-    local humveeBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F')))
-    thisInstance.blueprint = humveeBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F'), function(instance)
+    
+        local humveeBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = humveeBp    
+    
+    end)
     
 
 end)
@@ -169,8 +177,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = humveeSpawn3
 
-    local humveeBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F')))
-    thisInstance.blueprint = humveeBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F'), function(instance)
+    
+        local humveeBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = humveeBp    
+    
+    end)
 
 end)
 
@@ -192,9 +204,9 @@ end)
 
 -- Spawn new HMMWV
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
+ResourceManager:RegisterInstanceLoadHandler(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F'), function(instance)
 
-    local humveeBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('7A9B2F60-BEFD-DF43-A0E5-0A097C6C973B'), Guid('E4069B76-79A8-2AD2-D845-E079DB62A92F')))
+    local humveeBp = VehicleBlueprint(instance)
     local newHumveeGuid = Guid('VIC0000W-0000-0000-0000-000000000000')
     local humveeSpawn4 = LinearTransform(
         Vec3(0.766051, -0.019242, -0.642492),
@@ -202,9 +214,9 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
         Vec3(0.642246, -0.017816, 0.766291),
         Vec3(-2066.81, 73.77, -537.79)
     )
-    FirestormCqlCreateVehicle(humveeBp, humveeSpawn4, newHumveeGuid, 61515, TeamId.TeamNeutral, false)
+    FirestormCqlCreateVehicle(humveeBp, humveeSpawn4, newHumveeGuid, 61515, TeamId.TeamNeutral, false)    
 
-end) 
+end)
 
 -- M1A2 Spawn (using old, changing to SP version)
 
@@ -222,8 +234,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = abramsSpawn1
 
-    local abramsBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC')))
-    thisInstance.blueprint = abramsBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC'), function(instance)
+    
+        local abramsBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = abramsBp    
+    
+    end)
 
 end)
 
@@ -243,8 +259,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = abramsSpawn2
 
-    local abramsBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC')))
-    thisInstance.blueprint = abramsBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC'), function(instance)
+    
+        local abramsBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = abramsBp    
+    
+    end)
 
 end)
 
@@ -264,8 +284,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = abramsSpawn3
 
-    local abramsBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC')))
-    thisInstance.blueprint = abramsBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC'), function(instance)
+    
+        local abramsBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = abramsBp    
+    
+    end)
 
 end)
 
@@ -285,8 +309,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = abramsSpawn4
 
-    local abramsBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC')))
-    thisInstance.blueprint = abramsBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC'), function(instance)
+    
+        local abramsBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = abramsBp    
+    
+    end)
 
 end)
 
@@ -308,9 +336,9 @@ end)
 
 -- Spawn new M1A2 Abrams
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
+ResourceManager:RegisterInstanceLoadHandler(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC'), function(instance)
 
-    local abramsBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C506D24-C455-470A-BE80-C93341380BB1'), Guid('3D1EAFE6-297A-4061-97EB-3EF1C17513BC')))
+    local abramsBp = VehicleBlueprint(instance)
     local abramsNewGuid = Guid('VIC0000X-0000-0000-0000-000000000000')
     local abramsSpawn5 = LinearTransform(
         Vec3(0.772469, 0.027369, -0.634462),
@@ -319,7 +347,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
         Vec3(-2053.99, 75.885071, -524.39)
     )
 
-    FirestormCqlCreateVehicle(abramsBp, abramsSpawn5, abramsNewGuid, 61516, TeamId.TeamNeutral, false)
+    FirestormCqlCreateVehicle(abramsBp, abramsSpawn5, abramsNewGuid, 61516, TeamId.TeamNeutral, false)    
 
 end)
 
@@ -461,9 +489,9 @@ end)
 
 -- Ka-60 Spawn (generating new)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990'), function(instance) -- Firestorm CQL Primary SubWorld Instance
+ResourceManager:RegisterInstanceLoadHandler(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990'), function(instance)
 
-    local ka60Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BAF08A5C'), Guid('B9BAE0F8-72B9-4E1C-B5AD-F9353727C990')))
+    local ka60Bp = VehicleBlueprint(instance)
     local newka60Guid = Guid('VIC0000V-0000-0000-0000-000000000000')
     local kasatkaSpawn1 = LinearTransform(
         Vec3(0.946353, 0.015726, 0.322752),
@@ -471,7 +499,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('2C5892FC-37CB-4A4E-92E2-2DD7BA
         Vec3(-0.322931, 0.081509, 0.942906),
         Vec3(182.035660, 78.225952, -1043.902954)
     )
-    FirestormCqlCreateVehicle(ka60Bp, kasatkaSpawn1, newka60Guid, 61519, TeamId.TeamNeutral, false)
+    FirestormCqlCreateVehicle(ka60Bp, kasatkaSpawn1, newka60Guid, 61519, TeamId.TeamNeutral, false)    
 
 end)
 
@@ -495,9 +523,9 @@ end)
 
 -- Spawn new buggy
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorld Instance
+ResourceManager:RegisterInstanceLoadHandler(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09'), function(instance)
 
-    local buggyBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
+    local buggyBp = VehicleBlueprint(instance)
     local newBuggyGuid = Guid('VIC0000Y-0000-0000-0000-000000000000')
     local buggySpawn1 = LinearTransform(
         Vec3(0.451043, -0.047482, 0.891238),
@@ -505,7 +533,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1A
         Vec3(-0.892060, 0.007436, 0.451855),
         Vec3(162.82, 75.854240, -996.94)
     )
-    FirestormCqlCreateVehicle(buggyBp, buggySpawn1, newBuggyGuid, 61517, TeamId.TeamNeutral, false)
+    FirestormCqlCreateVehicle(buggyBp, buggySpawn1, newBuggyGuid, 61517, TeamId.TeamNeutral, false)    
 
 end)
 
@@ -525,8 +553,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = buggySpawn2
 
-    local buggyBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
-    thisInstance.blueprint = buggyBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09'), function(instance)
+    
+        local buggyBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = buggyBp    
+    
+    end)
 
 end)
 
@@ -562,8 +594,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = buggySpawn3
 
-    local buggyBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
-    thisInstance.blueprint = buggyBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09'), function(instance)
+    
+        local buggyBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = buggyBp    
+    
+    end)
 
 end)
 
@@ -599,8 +635,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = bmpSpawn1
 
-    local btrBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E')))
-    thisInstance.blueprint = btrBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E'), function(instance)
+    
+        local btrBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = btrBp    
+    
+    end)
 
 end)
 
@@ -636,8 +676,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
     
     thisInstance.blueprintTransform = bmpSpawn2
 
-    local btrBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E')))
-    thisInstance.blueprint = btrBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E'), function(instance)
+    
+        local btrBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = btrBp    
+    
+    end)
 
 end)
 
@@ -673,8 +717,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = bmpSpawn3
 
-    local btrBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E')))
-    thisInstance.blueprint = btrBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E'), function(instance)
+    
+        local btrBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = btrBp    
+    
+    end)
 
 end)
 
@@ -710,8 +758,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('28279A3B-7E9C-4320-ACBE-6CD9F2
 
     thisInstance.blueprintTransform = bmpSpawn4
 
-    local btrBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E')))
-    thisInstance.blueprint = btrBp
+    ResourceManager:RegisterInstanceLoadHandler(Guid('22CFC313-4DD1-49E6-B45F-A8B1194105C5'), Guid('F998F5E4-220D-463A-A437-1C18D5C3A19E'), function(instance)
+    
+        local btrBp = VehicleBlueprint(instance)
+        thisInstance.blueprint = btrBp    
+    
+    end)
 
 end)
 

@@ -935,88 +935,92 @@ end)
 
 require '__shared/MpPresets/ThunderRun_CQL/MapModifications/FirestormCqlCreateVehicleFunc'
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('8DB9CB2A-2A16-44B8-927D-024F1AD06FCF'), Guid('252D6BEC-B56C-488F-85AB-5FD3E14EC949'), function(instance) -- Firestorm CQL Primary SubWorldData instance
-
-    --print('Placing vehicles on capture points...')
-
-    local t90Bp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('60106974-DD7D-11DD-A030-B04E425BA11E'), Guid('60106975-DD7D-11DD-A030-B04E425BA11E')))
-    local growlerBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('CF5166FD-6B60-11E0-8ACE-C75FA07B1C42'), Guid('E7A99B55-B5BD-C101-2384-97458D4AC23C')))
-    local buggyBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09')))
-    local sedanBp = VehicleBlueprint(ResourceManager:FindInstanceByGuid(Guid('1A52E780-FEF6-11DF-B32D-B2D8A97C362D'), Guid('4547A158-030C-B7B4-9043-4ADB726FAF8C')))
-
-    -- Desert Fort (A) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    -- 5* T90, 2* VDV Buggy
-
-    local t90Spawn1 = LinearTransform(Vec3(-0.152106, 0.032930, 0.987816), Vec3(-0.012861, 0.999294, -0.035293), Vec3(-0.988281, -0.018073, -0.151575), Vec3(-1010.712891, 88.614471, 791.417847))
-    local t90Guid1 = Guid('VIC0000A-0000-0000-0000-000000000000')
-    local t90Spawn2 = LinearTransform(Vec3(-0.140273, 0.037250, 0.989412), Vec3(-0.010141, 0.999186, -0.039055), Vec3(-0.990061, -0.015512, -0.139781), Vec3(-1009.880798, 88.304749, 779.738281))
-    local t90Guid2 = Guid('VIC0000B-0000-0000-0000-000000000000')
-    local t90Spawn3 = LinearTransform(Vec3(-0.998137, 0.009091, -0.060334), Vec3(0.008994, 0.999958, 0.001888), Vec3(0.060349, 0.001342, -0.998177), Vec3(-1095.048828, 86.875092, 794.875671))
-    local t90Guid3 = Guid('VIC0000C-0000-0000-0000-000000000000')
-    local t90Spawn4 = LinearTransform(Vec3(-0.131176, 0.005508, -0.991344), Vec3(0.002411, 0.999983, 0.005237), Vec3(0.991356, -0.001703, -0.131188), Vec3(-1138.451172, 87.244278, 758.978516))
-    local t90Guid4 = Guid('VIC0000N-0000-0000-0000-000000000000')
-    local t90Spawn5 = LinearTransform(Vec3(-0.131176, 0.005508, -0.991344), Vec3(0.002411, 0.999983, 0.005237), Vec3(0.991356, -0.001703, -0.131188), Vec3(-1140.520508, 87.230553, 748.164063))
-    local t90Guid5 = Guid('VIC0000O-0000-0000-0000-000000000000')
-
-    local buggySpawn1 = LinearTransform(Vec3(-0.990438, 0.007235, -0.137769), Vec3(0.004683, 0.999812, 0.018839), Vec3(0.137879, 0.018014, -0.990285), Vec3(-1123.425903, 87.082329, 779.523315))
-    local buggyGuid1 = Guid('VIC0000D-0000-0000-0000-000000000000')
-    local buggySpawn2 = LinearTransform(Vec3(-0.986479, 0.006036, -0.163778), Vec3(0.003370, 0.999857, 0.016552), Vec3(0.163854, 0.015776, -0.986359), Vec3(-1119.864746, 87.083076, 783.049744))
-    local buggyGuid2 = Guid('VIC0000E-0000-0000-0000-000000000000')
-
-    FirestormCqlCreateVehicle(t90Bp, t90Spawn1, t90Guid1, 61500, TeamId.Team2, true)
-    FirestormCqlCreateVehicle(t90Bp, t90Spawn2, t90Guid2, 61501, TeamId.Team2, true)
-    FirestormCqlCreateVehicle(t90Bp, t90Spawn3, t90Guid3, 61502, TeamId.Team2, true)
-    FirestormCqlCreateVehicle(t90Bp, t90Spawn4, t90Guid4, 61513, TeamId.Team2, true)
-    FirestormCqlCreateVehicle(t90Bp, t90Spawn5, t90Guid5, 61514, TeamId.Team2, true)
-    FirestormCqlCreateVehicle(buggyBp, buggySpawn1, buggyGuid1, 61503, TeamId.TeamNeutral, false)
-    FirestormCqlCreateVehicle(buggyBp, buggySpawn2, buggyGuid2, 61504, TeamId.TeamNeutral, false)
-
-    -- Oil Plant (B) --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    -- 2* Civilian Car
-
-    local b_sedanSpawn1 = LinearTransform(Vec3(0.551764, -0.019649, -0.833769), Vec3(0.010353, 0.999807, -0.016711), Vec3(0.833936, 0.000589, 0.551861), Vec3(-343.208252, 98.574158, 1660.414673))
-    local b_sedanGuid1 = Guid('VIC0000F-0000-0000-0000-000000000000')
-    local b_sedanSpawn2 = LinearTransform(Vec3(0.499813, 0.016870, -0.865969), Vec3(-0.000128, 0.999812, 0.019404), Vec3(0.866134, -0.009587, 0.499721), Vec3(-341.629456, 98.576019, 1657.838257))
-    local b_sedanGuid2 = Guid('VIC0000G-0000-0000-0000-000000000000')
-
-    FirestormCqlCreateVehicle(sedanBp, b_sedanSpawn1, b_sedanGuid1, 61505, TeamId.TeamNeutral, false)
-    FirestormCqlCreateVehicle(sedanBp, b_sedanSpawn2, b_sedanGuid2, 61506, TeamId.TeamNeutral, false)
-
-    -- Checkpoint 'Tarmac' (C) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    -- 2* Civilian Car
-
-    local c_sedanSpawn1 = LinearTransform(Vec3(-0.702310, -0.028955, -0.711282), Vec3(-0.049461, 0.998743, 0.008180), Vec3(0.710151, 0.040926, -0.702859), Vec3(348.360535, 95.193230, 843.761292))
-    local c_sedanGuid1 = Guid('VIC0000H-0000-0000-0000-000000000000')
-    local c_sedanSpawn2 = LinearTransform(Vec3(0.999854, -0.014587, 0.008881), Vec3(0.014527, 0.999871, 0.006860), Vec3(-0.008980, -0.006730, 0.999937), Vec3(341.504852, 95.121017, 834.597290))
-    local c_sedanGuid2 = Guid('VIC0000I-0000-0000-0000-000000000000')
-
-    FirestormCqlCreateVehicle(sedanBp, c_sedanSpawn1, c_sedanGuid1, 61507, TeamId.TeamNeutral, false)
-    FirestormCqlCreateVehicle(sedanBp, c_sedanSpawn2, c_sedanGuid2, 61508, TeamId.TeamNeutral, false)
-
-    -- Objective 'Alter' (D) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    -- 2* Growler ITV
-    -- Growler ITV existing at (-211,125,49)
-
-    local d_growlerSpawn1 = LinearTransform(Vec3(0.086971, 0.030058, -0.995757), Vec3(0.010412, 0.999463, 0.031079), Vec3(0.996156, -0.013071, 0.086611), Vec3(284.326569, 97.669113, 359.913696))
-    local d_growlerGuid1 = Guid('VIC0000J-0000-0000-0000-000000000000')
-    local d_growlerSpawn2 = LinearTransform(Vec3(0.147082, 0.018261, -0.988956), Vec3(0.012030, 0.999723, 0.020249), Vec3(0.989051, -0.014875, 0.146822), Vec3(284.044342, 97.597496, 363.171600))
-    local d_growlerGuid2 = Guid('VIC0000K-0000-0000-0000-000000000000')
-
-    FirestormCqlCreateVehicle(growlerBp, d_growlerSpawn1, d_growlerGuid1, 61509, TeamId.TeamNeutral, false)
-    FirestormCqlCreateVehicle(growlerBp, d_growlerSpawn2, d_growlerGuid2, 61510, TeamId.TeamNeutral, false)
-
-    -- Construction Site (E) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    -- 2* Civilian Car
-    -- VDV Buggy existing at (196, 122, 121)
-
-    local e_sedanSpawn1 = LinearTransform(Vec3(0.333944, 0.080649, 0.939137), Vec3(-0.028739, 0.996741, -0.075376), Vec3(-0.942155, -0.001819, 0.335173), Vec3(594.159180, 131.338791, -497.449127))
-    local e_sedanGuid1 = Guid('VIC0000L-0000-0000-0000-000000000000')
-    local e_sedanSpawn2 = LinearTransform(Vec3(0.451344, 0.063084, 0.890117), Vec3(-0.025341, 0.998002, -0.057880), Vec3(-0.891990, 0.003567, 0.452041), Vec3(595.521362, 131.673874, -493.656830))
-    local e_sedanGuid2 = Guid('VIC0000M-0000-0000-0000-000000000000')
-
-    FirestormCqlCreateVehicle(sedanBp, e_sedanSpawn1, e_sedanGuid1, 61511, TeamId.TeamNeutral, false)
-    FirestormCqlCreateVehicle(sedanBp, e_sedanSpawn2, e_sedanGuid2, 61512, TeamId.TeamNeutral, false)
-
+ResourceManager:RegisterInstanceLoadHandler(Guid('60106974-DD7D-11DD-A030-B04E425BA11E'), Guid('60106975-DD7D-11DD-A030-B04E425BA11E'), function(instance1)
+    ResourceManager:RegisterInstanceLoadHandler(Guid('CF5166FD-6B60-11E0-8ACE-C75FA07B1C42'), Guid('E7A99B55-B5BD-C101-2384-97458D4AC23C'), function(instance2)
+        ResourceManager:RegisterInstanceLoadHandler(Guid('2EA804A7-8232-11E0-823A-BD52CA6DC6B3'), Guid('D68E417F-6103-5140-3ABC-4C7505160A09'), function(instance3)
+            ResourceManager:RegisterInstanceLoadHandler(Guid('1A52E780-FEF6-11DF-B32D-B2D8A97C362D'), Guid('4547A158-030C-B7B4-9043-4ADB726FAF8C'), function(instance4)
+        
+                local t90Bp = VehicleBlueprint(instance1)
+                local growlerBp = VehicleBlueprint(instance2)
+                local buggyBp = VehicleBlueprint(instance3)
+                local sedanBp = VehicleBlueprint(instance4)
+            
+                -- Desert Fort (A) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                -- 5* T90, 2* VDV Buggy
+            
+                local t90Spawn1 = LinearTransform(Vec3(-0.152106, 0.032930, 0.987816), Vec3(-0.012861, 0.999294, -0.035293), Vec3(-0.988281, -0.018073, -0.151575), Vec3(-1010.712891, 88.614471, 791.417847))
+                local t90Guid1 = Guid('VIC0000A-0000-0000-0000-000000000000')
+                local t90Spawn2 = LinearTransform(Vec3(-0.140273, 0.037250, 0.989412), Vec3(-0.010141, 0.999186, -0.039055), Vec3(-0.990061, -0.015512, -0.139781), Vec3(-1009.880798, 88.304749, 779.738281))
+                local t90Guid2 = Guid('VIC0000B-0000-0000-0000-000000000000')
+                local t90Spawn3 = LinearTransform(Vec3(-0.998137, 0.009091, -0.060334), Vec3(0.008994, 0.999958, 0.001888), Vec3(0.060349, 0.001342, -0.998177), Vec3(-1095.048828, 86.875092, 794.875671))
+                local t90Guid3 = Guid('VIC0000C-0000-0000-0000-000000000000')
+                local t90Spawn4 = LinearTransform(Vec3(-0.131176, 0.005508, -0.991344), Vec3(0.002411, 0.999983, 0.005237), Vec3(0.991356, -0.001703, -0.131188), Vec3(-1138.451172, 87.244278, 758.978516))
+                local t90Guid4 = Guid('VIC0000N-0000-0000-0000-000000000000')
+                local t90Spawn5 = LinearTransform(Vec3(-0.131176, 0.005508, -0.991344), Vec3(0.002411, 0.999983, 0.005237), Vec3(0.991356, -0.001703, -0.131188), Vec3(-1140.520508, 87.230553, 748.164063))
+                local t90Guid5 = Guid('VIC0000O-0000-0000-0000-000000000000')
+            
+                local buggySpawn1 = LinearTransform(Vec3(-0.990438, 0.007235, -0.137769), Vec3(0.004683, 0.999812, 0.018839), Vec3(0.137879, 0.018014, -0.990285), Vec3(-1123.425903, 87.082329, 779.523315))
+                local buggyGuid1 = Guid('VIC0000D-0000-0000-0000-000000000000')
+                local buggySpawn2 = LinearTransform(Vec3(-0.986479, 0.006036, -0.163778), Vec3(0.003370, 0.999857, 0.016552), Vec3(0.163854, 0.015776, -0.986359), Vec3(-1119.864746, 87.083076, 783.049744))
+                local buggyGuid2 = Guid('VIC0000E-0000-0000-0000-000000000000')
+            
+                FirestormCqlCreateVehicle(t90Bp, t90Spawn1, t90Guid1, 61500, TeamId.Team2, true)
+                FirestormCqlCreateVehicle(t90Bp, t90Spawn2, t90Guid2, 61501, TeamId.Team2, true)
+                FirestormCqlCreateVehicle(t90Bp, t90Spawn3, t90Guid3, 61502, TeamId.Team2, true)
+                FirestormCqlCreateVehicle(t90Bp, t90Spawn4, t90Guid4, 61513, TeamId.Team2, true)
+                FirestormCqlCreateVehicle(t90Bp, t90Spawn5, t90Guid5, 61514, TeamId.Team2, true)
+                FirestormCqlCreateVehicle(buggyBp, buggySpawn1, buggyGuid1, 61503, TeamId.TeamNeutral, false)
+                FirestormCqlCreateVehicle(buggyBp, buggySpawn2, buggyGuid2, 61504, TeamId.TeamNeutral, false)
+            
+                -- Oil Plant (B) --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                -- 2* Civilian Car
+            
+                local b_sedanSpawn1 = LinearTransform(Vec3(0.551764, -0.019649, -0.833769), Vec3(0.010353, 0.999807, -0.016711), Vec3(0.833936, 0.000589, 0.551861), Vec3(-343.208252, 98.574158, 1660.414673))
+                local b_sedanGuid1 = Guid('VIC0000F-0000-0000-0000-000000000000')
+                local b_sedanSpawn2 = LinearTransform(Vec3(0.499813, 0.016870, -0.865969), Vec3(-0.000128, 0.999812, 0.019404), Vec3(0.866134, -0.009587, 0.499721), Vec3(-341.629456, 98.576019, 1657.838257))
+                local b_sedanGuid2 = Guid('VIC0000G-0000-0000-0000-000000000000')
+            
+                FirestormCqlCreateVehicle(sedanBp, b_sedanSpawn1, b_sedanGuid1, 61505, TeamId.TeamNeutral, false)
+                FirestormCqlCreateVehicle(sedanBp, b_sedanSpawn2, b_sedanGuid2, 61506, TeamId.TeamNeutral, false)
+            
+                -- Checkpoint 'Tarmac' (C) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                -- 2* Civilian Car
+            
+                local c_sedanSpawn1 = LinearTransform(Vec3(-0.702310, -0.028955, -0.711282), Vec3(-0.049461, 0.998743, 0.008180), Vec3(0.710151, 0.040926, -0.702859), Vec3(348.360535, 95.193230, 843.761292))
+                local c_sedanGuid1 = Guid('VIC0000H-0000-0000-0000-000000000000')
+                local c_sedanSpawn2 = LinearTransform(Vec3(0.999854, -0.014587, 0.008881), Vec3(0.014527, 0.999871, 0.006860), Vec3(-0.008980, -0.006730, 0.999937), Vec3(341.504852, 95.121017, 834.597290))
+                local c_sedanGuid2 = Guid('VIC0000I-0000-0000-0000-000000000000')
+            
+                FirestormCqlCreateVehicle(sedanBp, c_sedanSpawn1, c_sedanGuid1, 61507, TeamId.TeamNeutral, false)
+                FirestormCqlCreateVehicle(sedanBp, c_sedanSpawn2, c_sedanGuid2, 61508, TeamId.TeamNeutral, false)
+            
+                -- Objective 'Alter' (D) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                -- 2* Growler ITV
+                -- Growler ITV existing at (-211,125,49)
+            
+                local d_growlerSpawn1 = LinearTransform(Vec3(0.086971, 0.030058, -0.995757), Vec3(0.010412, 0.999463, 0.031079), Vec3(0.996156, -0.013071, 0.086611), Vec3(284.326569, 97.669113, 359.913696))
+                local d_growlerGuid1 = Guid('VIC0000J-0000-0000-0000-000000000000')
+                local d_growlerSpawn2 = LinearTransform(Vec3(0.147082, 0.018261, -0.988956), Vec3(0.012030, 0.999723, 0.020249), Vec3(0.989051, -0.014875, 0.146822), Vec3(284.044342, 97.597496, 363.171600))
+                local d_growlerGuid2 = Guid('VIC0000K-0000-0000-0000-000000000000')
+            
+                FirestormCqlCreateVehicle(growlerBp, d_growlerSpawn1, d_growlerGuid1, 61509, TeamId.TeamNeutral, false)
+                FirestormCqlCreateVehicle(growlerBp, d_growlerSpawn2, d_growlerGuid2, 61510, TeamId.TeamNeutral, false)
+            
+                -- Construction Site (E) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                -- 2* Civilian Car
+                -- VDV Buggy existing at (196, 122, 121)
+            
+                local e_sedanSpawn1 = LinearTransform(Vec3(0.333944, 0.080649, 0.939137), Vec3(-0.028739, 0.996741, -0.075376), Vec3(-0.942155, -0.001819, 0.335173), Vec3(594.159180, 131.338791, -497.449127))
+                local e_sedanGuid1 = Guid('VIC0000L-0000-0000-0000-000000000000')
+                local e_sedanSpawn2 = LinearTransform(Vec3(0.451344, 0.063084, 0.890117), Vec3(-0.025341, 0.998002, -0.057880), Vec3(-0.891990, 0.003567, 0.452041), Vec3(595.521362, 131.673874, -493.656830))
+                local e_sedanGuid2 = Guid('VIC0000M-0000-0000-0000-000000000000')
+            
+                FirestormCqlCreateVehicle(sedanBp, e_sedanSpawn1, e_sedanGuid1, 61511, TeamId.TeamNeutral, false)
+                FirestormCqlCreateVehicle(sedanBp, e_sedanSpawn2, e_sedanGuid2, 61512, TeamId.TeamNeutral, false)            
+        
+            end)
+        end)
+    end)
 end)
 
 -- Find IndexInBlueprint indices
