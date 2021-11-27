@@ -549,7 +549,7 @@ approvedWorldPartRefGuids = {
     'A1463978-15F0-4137-9770-7DAA7FE668C6', -- DesertFort_DesignerArt
     '4ADD8067-FF73-47A5-81EE-E0AB462BB3AD', -- DesertFort_Sound
     'A42F098A-05C1-4F86-952D-492A40FF83F0', -- DesertFortPCOnly_Layer
-    --'AEDCBA47-3B7B-408A-B27E-F8814EC7CA50', -- DesertFortSmallObjects_01_LevelArtSubstream --------------- PROBLEMATIC: server CTD on sending spawn messages
+    'AEDCBA47-3B7B-408A-B27E-F8814EC7CA50', -- DesertFortSmallObjects_01_LevelArtSubstream
     '2DADBEA7-CE53-4DCC-918E-92D599601D4D', -- DesertIntro_LevelArt
     'DC8300C9-3853-4B31-9B50-3BFA65C3B55D', -- DesertIntro_Sound
     'DFF9F0E4-CC66-4C84-B032-FC3B2E122EF0', -- HighwayOfDeath_01_LevelArt
@@ -557,7 +557,7 @@ approvedWorldPartRefGuids = {
     '03DB12FA-9131-43D8-BFAA-92CED1A7E6C4', -- HighwayOfDeath2_LevelArt
     'A4548DC1-882E-49B0-92A3-EEA4FD2A6A9A', -- HighwayOfDetah2_Sound [sic]
     'B04E3558-79CD-496D-85D0-25B521EF185C', -- HighwayOverpass_01_LevelArt
-    --'FF1E141A-D019-4A7D-ABC5-0E229B2859F3', -- HighwayToTeheran_01_LevelArt ------------------------------ PROBLEMATIC: server CTD on sending spawn messages
+    'FF1E141A-D019-4A7D-ABC5-0E229B2859F3', -- HighwayToTeheran_01_LevelArt
     'C21F4205-887C-43CC-8DA6-2118D88576C0', -- HighwayToTeheran_01_Propsketching
     'EC0855CD-6993-4B0F-A1F0-7D67499B0ED3', -- HighwayToTeheran_01_Sound
     '8B2DDC6C-FF27-4D4F-9124-97A5108E023F', -- Highway1_Sound
