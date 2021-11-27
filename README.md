@@ -47,7 +47,7 @@ Some maps have custom layouts, making them playable for more than just explorati
 
 | Level                      | Gamemode (as in MapList) | Description                                                                                                          |
 | -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Tehran. Maybe biggest CQL map in BF.        |
+| Thunder Run `SP_Tank`      | `ConquestLarge0`         | Follows (mostly) the mission, starting in the desert and running towards Tehran. Maybe biggest CQL map in BF. (Not working properly at the moment)        |
 
 More custom layouts will be made in the future, and keku645 has many more available in their fork of this mod.
 
