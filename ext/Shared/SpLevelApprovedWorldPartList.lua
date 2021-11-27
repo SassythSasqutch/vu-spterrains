@@ -483,7 +483,7 @@ approvedWorldPartRefGuids = {
     'FA76D04E-8690-4C0E-AF73-6212B0CED163', -- Art_Buildings
     'B0BBAA3B-4806-4F79-94F2-C8404174167B', -- RoadSplines
     '0F5B9334-E495-4FE6-957B-F48C76653574', -- VE
-    '12E7268F-78AF-42EC-BFE4-395D375F495B', -- VE_Schematic
+    --'12E7268F-78AF-42EC-BFE4-395D375F495B', -- VE_Schematic ---------------------------------------------- PROBLEMATIC: server CTD on sending spawn messages
     'EAA06B1F-5A18-44CD-9068-A2008D79ACE5', -- Sound_Areas
     '298C19FA-0BF8-49DF-A166-00CA028C29EF', -- Sound_Areas_Schematic
     '3A544FDA-ED19-4CAC-8D84-D995CBE01CEF', -- Lighting
@@ -536,7 +536,7 @@ approvedWorldPartRefGuids = {
     '053093FD-DDA5-48A7-96AF-CA92856182ED', -- RocketApartment_SND (sound)
     '0615DB7D-1F54-4228-B729-D6111173C4D8', -- AB06_Buildings (AB06 is the Sewers SubWorld)
     'CF6F65AB-A785-490D-B959-64221C1B3CE6', -- Sewers_OBJECTS
-    'BE133ED3-7B4D-4B17-8B0F-27BAF573CAE9', -- Sewers_Lighting
+    'BE133ED3-7B4D-4B17-8B0F-27BAF573CAE9', -- Sewers_Lighting]]
 
     -- Thunder Run SP_Tank ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'A242FC6A-B0B9-1FB1-3B64-C69DDFD8DEF7', -- Default (terrain)
