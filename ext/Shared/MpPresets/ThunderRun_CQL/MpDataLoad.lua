@@ -3,7 +3,20 @@ require '__shared/SpBundleTable'
 -- Mount superbundles
 Events:Subscribe('Level:LoadResources', function()
 
-    print('Mounting Operation Firestorm superbundle for MP logic...')
+    local levelName = SharedUtils:GetLevelName()
+    local gameModeName = SharedUtils:GetCurrentGameMode()
+
+    if levelName == nil or gameModeName == nil then
+        return
+    end
+
+    -- Don't continue if the level is not Thunder Run Conquest Large
+    if string.find(levelName, 'SP_Tank') == nil or gameModeName ~= 'ConquestLarge0' then
+        return
+    end
+
+    print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Thunder Run CQL multiplayer preset...')
+
     ResourceManager:MountSuperBundle('levels/mp_012/mp_012')
 
 end)
@@ -24,8 +37,6 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
     end
 
     if #bundles == 1 and bundles[1] == levelName then
-
-        print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading Thunder Run CQL multiplayer preset...')
 
         print('Injecting MP bundles...')
         bundles = {

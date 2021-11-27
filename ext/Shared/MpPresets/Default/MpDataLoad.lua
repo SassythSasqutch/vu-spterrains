@@ -15,16 +15,6 @@ require '__shared/SpBundleTable' -- This contains the list of bundles to load fo
 -- Mount superbundles
 Events:Subscribe('Level:LoadResources', function()
 
-    print('Mounting XP2 superbundle...')
-    ResourceManager:MountSuperBundle('xp2chunks') -- Change this. This is a superbundle containing data for each DLC. Back to Karkand is XP1, Close Quarters is XP2, etcetera. If you're using a vanilla map, you don't need this.
-    print('Mounting Ziba Tower superbundle for MP logic...')
-    ResourceManager:MountSuperBundle('levels/xp2_skybar/xp2_skybar') -- Change this to whatever level you're building your preset off.
-
-end)
-
--- Inject bundles
-Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
-
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
 
@@ -42,9 +32,31 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
         return
     end
 
-    if #bundles == 1 and bundles[1] == levelName then
+    print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading default multiplayer preset...')
 
-        print('Gamemode is '..gameModeName..' for map '..levelName..'. Loading default multiplayer preset...')
+    ResourceManager:MountSuperBundle('xp2chunks') -- Change this. This is a superbundle containing data for each DLC. Back to Karkand is XP1, Close Quarters is XP2, etcetera. If you're using a vanilla map, you don't need this.
+    ResourceManager:MountSuperBundle('levels/xp2_skybar/xp2_skybar') -- Change this to whatever level you're building your preset off.
+
+end)
+
+-- Inject bundles
+Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compartment)
+
+    local levelName = SharedUtils:GetLevelName()
+    local gameModeName = SharedUtils:GetCurrentGameMode()
+
+    -- Don't continue if the levelName or gameModeName is nil
+    if levelName == nil or gameModeName == nil then
+        return
+    end
+
+    -- Don't continue if the level is not any singleplayer or coop level in TDM CQ.
+    -- Change this to have the exact same code as on line 31, so that this code only runs when we're loading the map and gamemodes we want.
+    if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) or gameModeName ~= 'TeamDeathMatchC0' then
+        return
+    end
+
+    if #bundles == 1 and bundles[1] == levelName then
 
         print('Injecting MP bundles...')
         bundles = {
@@ -87,7 +99,7 @@ Events:Subscribe('Level:RegisterEntityResources', function(levelData)
     local gameModeName = SharedUtils:GetCurrentGameMode()
 
     -- Don't continue if the level is not any singleplayer or coop level in TDM CQ.
-    -- Change this to have the exact same code as on line 45, so that this code only runs when we're loading the map and gamemodes we want.
+    -- Change this to have the exact same code as on line 31, so that this code only runs when we're loading the map and gamemodes we want.
     if (string.find(levelName, 'COOP_') == nil and string.find(levelName, 'SP_') == nil) or gameModeName ~= 'TeamDeathMatchC0' then
         return
     end

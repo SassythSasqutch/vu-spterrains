@@ -1,8 +1,8 @@
 Events:Subscribe('Level:LoadResources', function()
 
-    print('Mounting MP superbundle...')
+    print('Mounting common superbundles for singleplayer and coop levels...')
+
     ResourceManager:MountSuperBundle('mpchunks')
-    print('Mounting UI superbundle...')
     ResourceManager:MountSuperBundle('ui')
 
 end)
