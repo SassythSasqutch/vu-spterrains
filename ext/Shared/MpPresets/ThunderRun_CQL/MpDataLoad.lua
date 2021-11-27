@@ -1,3 +1,5 @@
+require '__shared/SpBundleTable'
+
 -- Mount superbundles
 Events:Subscribe('Level:LoadResources', function()
 
@@ -30,8 +32,11 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             'ui/flow/bundle/loadingbundlemp',
             'levels/mp_012/mp_012',
             'levels/mp_012/conquest_large',
-            bundles[1],
         }
+
+        for _, spBundle in pairs(SpBundleTable[levelName]) do
+            table.insert(bundles, spBundle)
+        end
 
         hook:Pass(bundles, compartment)
 

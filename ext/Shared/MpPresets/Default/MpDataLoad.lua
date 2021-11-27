@@ -10,6 +10,8 @@
 
 -- For any questions, SassythSasqutch#9081 on Discord is more than willing to help.
 
+require '__shared/SpBundleTable' -- This contains the list of bundles to load for each level.
+
 -- Mount superbundles
 Events:Subscribe('Level:LoadResources', function()
 
@@ -50,8 +52,13 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             'levels/xp2_skybar/xp2_skybar', -- Replace 'XP2_Skybar' with whatever MP level you're using. I used Ziba Tower XP2_Skybar (obviously) for this one.
             'levels/xp2_skybar/deathmatch', -- Find the bundle names you'll need. https://github.com/Powback/VU-Wiki/tree/master/Bundles is a good resource. 
             'levels/xp2_skybar/teamdm', -- Same as above. Message me and I can help you out if needed.
-            bundles[1],
         }
+
+        -- This code adds all the bundles for the particular SP/COOP map. You have to add them manually so that the game does not crash on blueprint creation. 
+        -- Don't change this.
+        for _, spBundle in pairs(SpBundleTable[levelName]) do
+            table.insert(bundles, spBundle)
+        end
 
         hook:Pass(bundles, compartment)
 
@@ -59,7 +66,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
     -- Complete thanks to Powback and kiwidog who made me take one last look at the bundles so that I could notice this
     -- Intercepts the UiPlaying bundle for the SP or COOP level, and replaces it with an MP one
-    for i, bundle in pairs(bundles) do
+    for _, bundle in pairs(bundles) do
         if bundle == levelName..'_UiPlaying' then
             bundles = {
                 'ui/flow/bundle/ingamebundlemp', -- Leave this
