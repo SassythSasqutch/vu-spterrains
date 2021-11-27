@@ -6,7 +6,7 @@
 
 Modification for Battlefield 3 (using the Venice Unleashed framework) allowing singleplayer and co-op maps to be played in multiplayer with a universal solution. In the future I'll try and add fixes for excluded WorldPartData (see below for more details), and add more MP-friendly Visual Environment for each level (e.g. COOP_010 has a black sky). Feel free to contribute to these yourself.
 
-In your server MapList, load the level like any other with any gamemode. The options are below, in chronological order:
+In your server MapList, load the level like any other with any gamemode. The options are below, in narrative order:
 
 ```
 coop_007         -    Operation Exodus
