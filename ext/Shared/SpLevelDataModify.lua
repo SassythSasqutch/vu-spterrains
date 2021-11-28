@@ -15,7 +15,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
     for _, instance in pairs(partition.instances) do
 
         if instance == nil then 
-            break
+            return
         end
 
         if instance.typeInfo.name == 'LevelDescriptionAsset' then
