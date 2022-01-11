@@ -37,10 +37,6 @@ If you put all of the above in your MapList (in the same order, without sp_tank_
 
 By default, load Team Deathmatch CQ (`TeamDeathMatchC0`) to explore. Since there will be closed doors and invisible walls in most levels, I recommend a NoClip mod, like [txt's and Powback's vu-noclip mod here](https://github.com/romunro/VU-Noclip) - press 'v', and you will be able to move anywhere you want.
 
-## Gamemodes - Freecam
-
-To use a freecam to look around, load any gamemode other than `TeamDeathMatchC0`. If the map has a custom layout (see below), don't load that gamemode either.
-
 ## Gamemodes - Custom Layouts
 
 Some maps have custom layouts, making them playable for more than just exploration.
