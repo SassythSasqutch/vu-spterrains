@@ -49,7 +49,7 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         end
 
-        if instance:Is('SpawnReferenceObjectData') and instance.instanceGuid ~= Guid('Z0000000-0000-0000-0000-00SPTERRAINS') then
+        if instance:Is('SpawnReferenceObjectData') then
 
             local thisInstance = SpawnReferenceObjectData(instance)
             thisInstance:MakeWritable()

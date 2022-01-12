@@ -135,7 +135,7 @@ local spawnPosns = {
 -- All we need to do now is find where Ziba Tower keeps all its spawn logic (known as AlternateSpawnEntityData) so we can change their coordinates to the above.
 -- I know that these are all contained in the Levels/XP2_Skybar/Spawners WorldData, so I can register and instance load handler for that.
 -- A good tip is to search for AlternateSpawnEntityData under your MP level to see where they're all stored.
-ResourceManager:RegisterInstanceLoadHandler(Guid('5B274606-C861-411A-B60A-F23B6277F92A'), Guid('7C67E13-BE16-4E1C-AB6E-D7FE834BF2D5'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('5B274606-C861-411A-B60A-F23B6277F92A'), Guid('07C67E13-BE16-4E1C-AB6E-D7FE834BF2D5'), function(instance)
 
     local levelName = SharedUtils:GetLevelName()
     local gameModeName = SharedUtils:GetCurrentGameMode()
