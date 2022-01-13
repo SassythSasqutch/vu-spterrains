@@ -2,7 +2,7 @@
 	"Name": "SP and Co-op Terrains, for use with Reality Mod only.",
 	"Description": "Allows singleplayer and co-op terrains to be played in multiplayer. Designed for use with BF3 Reality Mod.",
 	"Version": "1.0",
-	"Authors": "SassythSasqutch",
+	"Authors": ["SassythSasqutch"],
 	"HasVeniceEXT": true,
 	"HasWebUI": false,
 	"Dependencies": {
