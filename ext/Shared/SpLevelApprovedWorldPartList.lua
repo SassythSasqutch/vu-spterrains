@@ -2,6 +2,8 @@
 -- This acts as a 'whitelist' for WorldPart instances. As such, the WorldPartReferenceObjectData GUIDs in this list are allowed to load, and all others aren't.
 
 approvedWorldPartRefGuids = {
+    -- CustomLevelLoader ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    '93842B6D-0185-483D-9EF5-AD2B47BDABDE',
     -- Hit and Run COOP_002 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     '88312BCE-30C2-0B8B-4E77-40FBF3524B15', -- Default (terrain)
     '928D0DAD-A194-4180-91D2-FD8FEE865FB3', -- Sound
