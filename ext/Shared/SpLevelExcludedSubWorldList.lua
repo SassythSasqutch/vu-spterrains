@@ -3,7 +3,6 @@
 -- See below for instructions on removing SubWorlds.
 
 spLevelExcludedSubWorldList = {
-    '',
 }
 
 -- If you're making a map from a singleplayer or co-op terrain, often you will want to exclude an entire part of the level - also known as a SubWorld.
