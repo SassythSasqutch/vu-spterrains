@@ -6,7 +6,6 @@
 	"HasVeniceEXT": true,
 	"HasWebUI": false,
 	"Dependencies": {
-		"realitymod": ">0.0.0"
 	},
 	"Tags": [
 	]
