@@ -69,7 +69,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
 
 end)
 
--- Add resources to registry
+-- Add registries for vehicles
 
 Events:Subscribe('Level:RegisterEntityResources', function(levelData)
 
