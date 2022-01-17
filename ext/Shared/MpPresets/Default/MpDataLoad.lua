@@ -66,7 +66,7 @@ Hooks:Install('ResourceManager:LoadBundles', 500, function(hook, bundles, compar
             'levels/xp2_skybar/teamdm', -- Same as above. Message me and I can help you out if needed.
         }
 
-        -- This code adds all the bundles for the particular SP/COOP map. You have to add them manually so that the game does not crash on blueprint creation. 
+        -- This code adds all the bundles for the particular SP/COOP map. You have to add them in a specific order so that the game does not crash on blueprint creation. 
         -- Don't change this.
         for _, spBundle in pairs(SpBundleTable[levelName]) do
             table.insert(bundles, spBundle)
