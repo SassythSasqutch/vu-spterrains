@@ -32,20 +32,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             local mpCategory = LevelDescriptionInclusionCategory()
             mpCategory.category = 'GameMode'
             mpCategory.mode:add('ConquestLarge0')
-            mpCategory.mode:add('ConquestSmall0')
-            mpCategory.mode:add('ConquestAssaultLarge0')
-            mpCategory.mode:add('ConquestAssaultSmall0')
-            mpCategory.mode:add('RushLarge0')
-            mpCategory.mode:add('SquadRush0')
-            mpCategory.mode:add('SquadDeathMatch0')
-            mpCategory.mode:add('TeamDeathMatch0')
-            mpCategory.mode:add('TeamDeathMatchC0')
-            mpCategory.mode:add('Domination0')
-            mpCategory.mode:add('GunMaster0')
-            mpCategory.mode:add('TankSuperiority0')
-            mpCategory.mode:add('Scavenger0')
-            mpCategory.mode:add('CaptureTheFlag0')
-            mpCategory.mode:add('AirSuperiority0')
             thisInstance.categories:add(mpCategory)
 
             -- Remove SP/COOP 'StartPoints'
@@ -107,8 +93,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
             thisInstance.viewDistance = 999999
 
         end
-
-        -- TODO: VisualEnvironment stuff
 
     end
 
