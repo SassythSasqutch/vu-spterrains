@@ -7,10 +7,6 @@ allowFearNoEvil = false
 require '__shared/SpLevelDataModify'
 require '__shared/SpLevelDataRemove'
 
--- COOP_006
-require '__shared/MpPresets/PanjshirValley_RM/MpDataLoad'
-require '__shared/MpPresets/PanjshirValley_RM/CreateGameModeSubWorldRef'
-
 -- SP_Tank
 require '__shared/MpPresets/KavirDesert_RM/MpDataLoad'
 require '__shared/MpPresets/KavirDesert_RM/CreateGameModeSubWorldRef'
