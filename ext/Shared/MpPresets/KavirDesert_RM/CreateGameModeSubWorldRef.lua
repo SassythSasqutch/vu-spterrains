@@ -1,5 +1,12 @@
 ResourceManager:RegisterInstanceLoadHandler(Guid('A263A077-CA17-11DF-830F-E4337AA80D37'), Guid('0DAA59A2-B0F3-6AC5-F203-AC58481919CE'), function(p_SpTankLevelData)
 
+    local levelName = SharedUtils:GetLevelName()
+    local gameModeName = SharedUtils:GetCurrentGameMode()
+
+    if string.find(levelName, 'SP_Tank') == nil or gameModeName ~= 'ConquestLarge0' then
+        return
+    end
+
     function getMpSubWorldRef()
         local firestormCqlSubWorldReferenceObjectData = SubWorldReferenceObjectData(ResourceManager:FindInstanceByGuid(Guid('8BB2506F-493A-11DF-B052-CC4B5D6E8131'), Guid('8FE1F5F4-6C8F-4185-B478-2DDEA1CCA686')))
         return firestormCqlSubWorldReferenceObjectData
