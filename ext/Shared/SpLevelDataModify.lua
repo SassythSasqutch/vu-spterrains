@@ -1,8 +1,7 @@
 require '__shared/SpLevelExcludedSubWorldList'
 
-Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through every single partition so, if there is an instance in one of them we want to change, we can do so.
+Events:Subscribe('Partition:Loaded', function(partition)
 
-    -- Don't read any partition not referring to a SP or COOP map
     if partition == nil or (string.find(partition.name, 'coop_') == nil and string.find(partition.name, 'sp_') == nil) then
         return
     end
@@ -11,7 +10,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
         return
     end
 
-    -- Reads all the instances in each partition
     for _, instance in pairs(partition.instances) do
 
         if instance == nil then 
@@ -45,7 +43,6 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
             for _, badSubWorldGuid in pairs(spLevelExcludedSubWorldList) do
                 if thisInstance.instanceGuid == Guid(badSubWorldGuid) then
-                    --print('Found SubWorld to exclude, disabling autoload for \'' .. thisInstance.bundleName .. '\'...')
                     thisInstance:MakeWritable()
                     thisInstance.autoLoad = false
                     goto cont
@@ -63,24 +60,13 @@ Events:Subscribe('Partition:Loaded', function(partition) -- Iterates through eve
 
         if instance.typeInfo.name == 'LevelData' then
 
-            -- Thanks to Bree_Arnold for giving me a hand with the below
             local thisInstance = LevelData(instance)
             thisInstance:MakeWritable()
 
-            -- Set as MP in LevelData
+            -- Enable map for MP in LevelData
             thisInstance.levelDescription.isCoop = false
             thisInstance.levelDescription.isMultiplayer = true
             thisInstance.levelDescription.isMenu = false
-
-        end
-
-        if instance.typeInfo.name == 'FogComponentData' then
-
-            local thisInstance = FogComponentData(instance)
-            thisInstance:MakeWritable()
-
-            -- Disable fog which comes default on some levels, such as Comrades (SP_Paris) or Thunder Run (SP_Tank)
-            thisInstance.enable = false
 
         end
 
